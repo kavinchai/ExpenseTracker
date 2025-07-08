@@ -1,0 +1,56 @@
+# Build results
+bin/
+obj/
+[Bb]uild/
+[Ll]og/
+[Ll]ogs/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio 2022
+.vs/
+.vscode/
+
+# Rider
+.idea/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# NuGet
+*.nupkg
+*.snupkg
+.nuget/
+packages/
+*.nuspec
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Entity Framework
+*.dbmdl
+
+# DotCover
+*.dotCover
+
+# NCrunch
+*.ncrunch*
+_NCrunch_*
+
+# Resharper
+*.DotSettings.user
+
+# StyleCop
+StyleCopReport.xml
+
+# Files built by Visual Studio
+*.dll
+*.exe
+*.app
+*.pdb
+*.cache
+*.mdb
