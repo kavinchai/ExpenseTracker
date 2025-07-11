@@ -1,0 +1,10 @@
+.submitform-base {
+    background-color: red;
+    height: 40vh;
+    width: 40vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
