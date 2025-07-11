@@ -1,8 +1,6 @@
-﻿using Supabase.Postgrest.Models;
-
 namespace ExpenseTracker.Models
 {
-    public class Expense : BaseModel
+    public class ExpenseDto
     {
         public Guid Id { get; set; }
         public string? Description { get; set; }

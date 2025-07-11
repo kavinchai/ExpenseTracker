@@ -1,5 +1,11 @@
+using ExpenseTracker.Models;
 using ExpenseTracker.Data;
+using Supabase;
+using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using DotNetEnv;
+
+DotNetEnv.Env.Load();
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,11 +15,32 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<ExpenseContext>(
-   options => options.UseSqlite("Data Source=expenses.db"));
+builder.Services.AddDbContext<ExpenseContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+
+var url = Environment.GetEnvironmentVariable("SUPABASE_URL");
+var apiKey = Environment.GetEnvironmentVariable("SUPABASE_API_KEY");
+
+var supabase = new Supabase.Client(url, apiKey);
+await supabase.InitializeAsync();
+
+
+builder.Services.AddSingleton(supabase);
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowFrontend", policy =>
+    {
+        policy.WithOrigins("http://localhost:3000")
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
 
 
 var app = builder.Build();
+
+app.UseCors("AllowFrontend");
 
 if (app.Environment.IsDevelopment())
 {
@@ -22,6 +49,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
 app.MapControllers();
 
 app.Run();
