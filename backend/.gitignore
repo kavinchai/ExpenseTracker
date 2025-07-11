@@ -54,3 +54,7 @@ StyleCopReport.xml
 *.pdb
 *.cache
 *.mdb
+
+# SQLite database write-ahead log and shared memory files
+expenses.db-shm
+expenses.db-wal

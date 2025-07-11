@@ -8,10 +8,6 @@ const Calendar = () => {
     const year = currentDate.getFullYear();
     const month = currentDate.getMonth();
 
-    const handleDateClick = (day) => {
-        alert(`You clicked: ${year}-${month + 1}-${day}`);
-    };
-
     return (
         <div className="calendar-base">
             <div className="calendar-head">
@@ -21,7 +17,6 @@ const Calendar = () => {
             <CalendarGrid
                 year={year}
                 month={month}
-                onDateClick={handleDateClick}
             />
             </div>
             

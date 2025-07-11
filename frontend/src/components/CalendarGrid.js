@@ -12,7 +12,7 @@ function getFirstDayOfMonth(year, month) {
   return new Date(year, month, 1).getDay(); // 0 (Sun) - 6 (Sat)
 }
 
-const CalendarGrid = ({ year, month, selectedDate, onDateClick }) => {
+const CalendarGrid = ({ year, month, selectedDate}) => {
   const daysInMonth = getDaysInMonth(year, month);
   const firstDayOfMonth = getFirstDayOfMonth(year, month);
 
@@ -61,7 +61,6 @@ const CalendarGrid = ({ year, month, selectedDate, onDateClick }) => {
           key={idx}
           day={day.day}
           isCurrentMonth={day.isCurrentMonth}
-          onClick={onDateClick}
         >
           {day.day}
         </CalendarDay>

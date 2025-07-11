@@ -1,11 +1,8 @@
 import React from "react";
 import "../css/CalendarDay.css";
 
-const CalendarDay = ({ day, isCurrentMonth, onClick }) => (
-  <div
-    className={`calendar-day ${isCurrentMonth ? "" : "dimmed"}`}
-    onClick={() => isCurrentMonth && onClick?.(day)}
-  >
+const CalendarDay = ({ day, isCurrentMonth }) => (
+  <div className={`calendar-day ${isCurrentMonth ? "" : "dimmed"}`}>
     {day}
   </div>
 );
