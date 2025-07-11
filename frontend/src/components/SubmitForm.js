@@ -46,7 +46,7 @@ const SubmitForm = () => {
                 description: "",
                 amount: "",
                 category: "",
-                date: ""
+                date: formData.date
             });
 
         } catch (error) {
@@ -55,32 +55,37 @@ const SubmitForm = () => {
     }
 
     return (
-        <form className="submitform-base" onSubmit={handleSubmit}>
-            <label>
+        <form className="submitform-base" onSubmit={handleSubmit} autoComplete="off">
+            <label className="submitform-group">
                 Description:
                 <input 
                     type="text" 
                     name="description" 
+                    value={formData.description || ""}
                     onChange={handleChange}
                 />
             </label>
-            <label>
+            <label className="submitform-group">
                 Amount:
                 <input 
                     type="text" 
                     name="amount" 
+                    value={formData.amount || ""}
                     onChange={handleChange}
                 />
             </label>
-            <label>
+            <label className="submitform-group">
                 Category:
                 <input 
                     type="text" 
-                    name="category" 
+                    name="category"
+                    value={formData.category || ""} 
                     onChange={handleChange}
                 />
             </label>
-            <input type="submit" value="Submit"/>
+            <label className="submitform-group">
+                <input type="submit" value="Submit"/>
+            </label>
         </form>
     );
 }
