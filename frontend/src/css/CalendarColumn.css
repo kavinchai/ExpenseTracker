@@ -1,0 +1,31 @@
+.calendarcolumn-base {
+	background-color: rgb(10, 121, 155);
+	width: 25%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	box-sizing: border-box;
+	padding: 20px;
+}
+
+.calendarcolumn-tblock {
+	background-color: white;
+	width: 80%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	border-radius: 8px;
+	margin: 10px;
+}
+
+.calendarcolumn-tr {
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}

@@ -1,19 +1,47 @@
-.calendarday {
-  text-align: center;
-  padding: 12px 0;
-  background-color: #f0f0f0;
-  cursor: pointer;
-  border-radius: 4px;
-  flex: 0 0 calc(100% / 7 - 4px);
-  box-sizing: border-box;
-  min-height: 18%;
+.calendarcell-base {
+	background-color: #ffffff;
+	text-align: center;
+	padding: 12px 0;
+	cursor: pointer;
+	flex: 0 0 calc(100% / 7 - 4px);
+	box-sizing: border-box;
+	min-height: 18%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	border-radius: 10px;
+	border-style: solid;
+	border-color: black;
+	border-width: 1px;
 }
 
-.calendarday:hover {
-  background-color: #c9d9eb;
+.calendarcell-base:hover {
+	background-color: #c9d9eb;
 }
 
-.calendarday-dimmed {
-  color: #aaa;
-  background-color: #eee;
+.calendarcell-dimmed {
+	color: #aaa;
+	background-color: #eee;
+}
+
+.calendarcell-header {
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 4px;
+	text-align: center;
+}
+
+.calendarcell-body {
+	flex: 1;
+	overflow-y: auto;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: baseline;
+}
+
+.calendarcell-footer {
+	font-size: 1em;
+	color: #333;
+	margin-top: 4px;
 }

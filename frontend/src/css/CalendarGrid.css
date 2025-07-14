@@ -1,21 +1,21 @@
-
 .calendargrid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px;
-  width: 100vw;
-  padding: 8px;
-  box-sizing: border-box;
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 2px;
+	box-sizing: border-box;
 }
 
 .calendargrid-days-in-week {
-  background-color: blue;
-  font-weight: bold;
-  flex: 0 0 calc(100% / 7 - 4px);
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 20px;
-  height: 30px;
+	/* background-color: red; */
+	font-weight: bold;
+	flex: 0 0 calc(100% / 7 - 4px);
+	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 18px;
+	height: 25px;
 }

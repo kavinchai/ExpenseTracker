@@ -4,14 +4,14 @@ import "../css/CalendarGrid.css";
 
 const weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-const CalendarGrid = ({ days, expenses }) => (
+const CalendarGrid = ({ days, currentDate, expenses }) => (
   <div className="calendargrid">
     {weekdays.map((day) => (
       <div key={day} className="calendargrid-days-in-week">{day}</div>
     ))}
 
     {days.map((day, idx) => (
-      <CalendarCell key={idx} day={day.day} isCurrentMonth={day.isCurrentMonth} expenses={expenses} />
+      <CalendarCell key={idx} day={day.day} currentDate={currentDate} isCurrentMonth={day.isCurrentMonth} expenses={expenses} />
     ))}
   </div>
 );
