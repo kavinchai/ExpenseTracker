@@ -1,5 +1,4 @@
-
-.calendar-day {
+.calendarday {
   text-align: center;
   padding: 12px 0;
   background-color: #f0f0f0;
@@ -10,11 +9,11 @@
   min-height: 18%;
 }
 
-.calendar-day:hover {
+.calendarday:hover {
   background-color: #c9d9eb;
 }
 
-.dimmed {
+.calendarday-dimmed {
   color: #aaa;
   background-color: #eee;
 }
