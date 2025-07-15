@@ -34,7 +34,7 @@ export const useCalendar = (year, month) => {
 
     // Trailing days from next month
     let trailingDay = 1;
-    const totalCells = 35; // 5 weeks x 7 days
+    const totalCells = 42; // 6 weeks x 7 days
     for (let i = days.length; i < totalCells; i++) {
         days.push({
             day: trailingDay++,
