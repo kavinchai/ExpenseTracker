@@ -23,9 +23,9 @@ const Calendar = () => {
   return (
     <div className="calendar-base">
       <div className="calendar-head">
-        <button onClick={() => changeMonth(-1)}>{'<'}</button>
-        <h2>{currentDate.toLocaleString("default", { month: "long" })} {year}</h2>
-        <button onClick={() => changeMonth(1)}>{'>'}</button>
+        <button className="calendar-nav-btn" onClick={() => changeMonth(-1)}>{'<'}</button>
+        <h2 className="calendar-month">{currentDate.toLocaleString("default", { month: "long" })} {year}</h2>
+        <button className="calendar-nav-btn" onClick={() => changeMonth(1)}>{'>'}</button>
       </div>
       <div className="calendar-body">
         <CalendarGrid days={days} currentDate={currentDate} month={month} year={year} expenses={expenses}/>
