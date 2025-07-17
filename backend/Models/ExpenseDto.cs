@@ -7,5 +7,6 @@ namespace ExpenseTracker.Models
         public decimal Amount { get; set; }
         public string? Category { get; set; }
         public DateTime Date { get; set; }
+        public long EpochDate { get; set; }
     }
 }

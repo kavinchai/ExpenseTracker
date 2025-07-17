@@ -33,7 +33,8 @@ namespace ExpenseTracker.Controllers
                 Description = expenseDto.Description,
                 Amount = expenseDto.Amount,
                 Category = expenseDto.Category,
-                Date = expenseDto.Date
+                Date = expenseDto.Date,
+                EpochDate = expenseDto.EpochDate
             };
 
             var response = await _supabase.From<Expense>().Insert(expense);

@@ -5,8 +5,7 @@ const SubmitForm = () => {
     const [formData, setFormData] = useState({
         description: "",
         amount: "",
-        category: "",
-        date: new Date().toISOString(),
+        category: ""    
     });
 
     const handleChange = (e) => {
@@ -24,7 +23,8 @@ const SubmitForm = () => {
             description: formData.description,
             amount: parseFloat(formData.amount),
             category: formData.category,
-            date: formData.date
+            date: new Date().toISOString(),
+            epochDate: Math.floor(new Date().getTime())
         };
 
         try {
@@ -45,8 +45,7 @@ const SubmitForm = () => {
             setFormData({
                 description: "",
                 amount: "",
-                category: "",
-                date: formData.date
+                category: ""
             });
 
         } catch (error) {

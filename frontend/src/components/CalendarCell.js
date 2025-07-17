@@ -15,7 +15,8 @@ const CalendarCell = ({ day, currentDate, isCurrentMonth, baseYear, baseMonth, e
   const cellDay = cellDate.getDate();
 
   const expensesForDay = expenses.filter(expense => {
-    const expenseDate = new Date(expense.Date);
+    const expenseDate = new Date(expense.EpochDate);
+    console.log(expenseDate);
     return (
       expenseDate.getFullYear() === cellYear &&
       expenseDate.getMonth() === cellMonth &&
@@ -33,7 +34,7 @@ const CalendarCell = ({ day, currentDate, isCurrentMonth, baseYear, baseMonth, e
       <div className="calendarcell-body">
             {expensesForDay.map(expense => (
               <div  className="calendarcell-tr" key={expense.Id}>
-                <div className="calendarcell-td">{expense.Category}</div>
+                <div className="calendarcell-td expense-category">{expense.Category}</div>
                 <div className="calendarcell-td">${expense.Amount.toFixed(2)}</div>
               </div>
             ))}

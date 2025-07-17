@@ -30,8 +30,9 @@
 }
 
 .calendarcell-body {
-	background-color: red;
+	/* background-color: red; */
 	flex: 1;
+	font-size: 14px;
 	overflow-y: auto;
 	text-align: center;
 	display: flex;
@@ -39,9 +40,27 @@
 }
 
 .calendarcell-tr {
-	display: flex;
-	justify-content: center;
-	gap: 20px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	background-color: transparent;
+	padding: 2px 4px;
+	align-items: center;
+	text-align: center;
+}
+
+.calendarcell-td {
+	padding: 2px 4px;
+	text-align: center;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	white-space: normal;
+	font-size: 13px;
+	color: #000;
+}
+
+.expense-category {
+	font-weight: normal;
+	color: #222;
 }
 
 .calendarcell-footer {
@@ -49,6 +68,5 @@
 	justify-content: center;
 	align-items: center;
 	color: #333;
-	font-size: 1em;
-	/* padding-top: 5px; */
+	font-size: 0.75em;
 }

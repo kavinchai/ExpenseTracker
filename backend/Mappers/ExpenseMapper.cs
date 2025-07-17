@@ -12,7 +12,8 @@ namespace ExpenseTracker.Mappers
                 Description = e.Description,
                 Amount = e.Amount,
                 Category = e.Category,
-                Date = e.Date
+                Date = e.Date,
+                EpochDate = e.EpochDate
             };
             return expenseDto;
         }
@@ -25,7 +26,8 @@ namespace ExpenseTracker.Mappers
                 Description = ed.Description,
                 Amount = ed.Amount,
                 Category = ed.Category,
-                Date = ed.Date
+                Date = ed.Date,
+                EpochDate = ed.EpochDate
             };
             return expense;
         }
