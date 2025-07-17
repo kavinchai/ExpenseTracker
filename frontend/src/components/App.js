@@ -1,4 +1,4 @@
-import '../css/App.css';
+import "../css/App.css";
 // eslint-disable-next-line
 import Calendar from "../components/Calendar";
 // eslint-disable-next-line
@@ -8,9 +8,9 @@ const App = () => {
   return (
     <>
       <Calendar />
-      {/* <SubmitForm/> */}
+      {/* <SubmitForm /> */}
     </>
   );
-}
+};
 
 export default App;
