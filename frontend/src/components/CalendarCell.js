@@ -1,50 +1,44 @@
-import React from "react";
 import "../css/CalendarCell.css";
 
-const CalendarCell = ({ day, currentDate, isCurrentMonth, expenses }) => {
+const CalendarCell = ({ day, currentDate, isCurrentMonth, baseYear, baseMonth, expenses }) => {  
+  const cellDate = new Date(baseYear, baseMonth, day);
+
+  if (!isCurrentMonth) {
+    if (day < 15) {
+      cellDate.setMonth(baseMonth + 1);
+    } else {
+      cellDate.setMonth(baseMonth - 1);
+    }
+  }
+  const cellYear = cellDate.getFullYear();
+  const cellMonth = cellDate.getMonth();
+  const cellDay = cellDate.getDate();
+
   const expensesForDay = expenses.filter(expense => {
     const expenseDate = new Date(expense.Date);
     return (
-      expenseDate.getDate() === day &&
-      expenseDate.getMonth() === currentDate.getMonth() &&
-      expenseDate.getFullYear() === currentDate.getFullYear()
+      expenseDate.getFullYear() === cellYear &&
+      expenseDate.getMonth() === cellMonth &&
+      expenseDate.getDate() === cellDay
     );
   });
-  const getDailyTotal = (expenses, day, currentDate) => {
-    return expenses
-      .filter(expense => {
-        const expenseDate = new Date(expense.Date);
-        return (
-          expenseDate.getDate() === day &&
-          expenseDate.getMonth() === currentDate.getMonth() &&
-          expenseDate.getFullYear() === currentDate.getFullYear()
-        );
-      })
-      .reduce((total, expense) => total + parseFloat(expense.Amount), 0);
+
+  const getDailyTotal = () => {
+    return expensesForDay.reduce((total, expense) => total + parseFloat(expense.Amount), 0);
   };
 
   return (
     <div className={`calendarcell-base ${isCurrentMonth ? "" : "calendarcell-dimmed"}`}>
       <div className="calendarcell-header">{day}</div>
       <div className="calendarcell-body">
-        <table>
-          <thead>
-            <tr>
-              {/* <th>Category</th> */}
-              {/* <th>Amount</th> */}
-            </tr>
-          </thead>
-          <tbody>
-              {expensesForDay.map((expense) => (
-                <tr key={expense.Id}>
-                  <td>{expense.Category}</td>
-                  <td>${expense.Amount.toFixed(2)}</td>
-                </tr>
-              ))}
-          </tbody>
-        </table>
+            {expensesForDay.map(expense => (
+              <div  className="calendarcell-tr" key={expense.Id}>
+                <div className="calendarcell-td">{expense.Category}</div>
+                <div className="calendarcell-td">${expense.Amount.toFixed(2)}</div>
+              </div>
+            ))}
       </div>
-      <div className="calendarcell-footer">{getDailyTotal(expenses, day, currentDate)}</div>
+      <div className="calendarcell-footer">{getDailyTotal()}</div>
     </div>
   );
 };

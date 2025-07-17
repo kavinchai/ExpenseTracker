@@ -1,4 +1,3 @@
-import react from 'react';
 import "../css/CalendarColumn.css";
 
 const CalendarColumn = ({currentDate, expenses}) => {
