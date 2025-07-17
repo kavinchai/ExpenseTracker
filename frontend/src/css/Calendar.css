@@ -16,7 +16,7 @@
 	align-items: center;
 	width: 100%;
 	height: var(--header-height);
-	font-size: 0.85rem; /* Relative to base font size */
+	font-size: 0.85rem;
 	flex-shrink: 0;
 	position: sticky;
 	top: 0;
