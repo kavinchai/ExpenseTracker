@@ -7,8 +7,8 @@ import SubmitForm from "../components/SubmitForm";
 const App = () => {
   return (
     <>
-      {/* <Calendar /> */}
-      <SubmitForm/>
+      <Calendar />
+      {/* <SubmitForm/> */}
     </>
   );
 }

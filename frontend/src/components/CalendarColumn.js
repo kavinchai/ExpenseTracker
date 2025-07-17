@@ -3,7 +3,7 @@ import "../css/CalendarColumn.css";
 const CalendarColumn = ({currentDate, expenses}) => {
     const getMonthlyTotal = (expenses, month, year) => {
         return expenses.filter(expense => {
-            const date = new Date(expense.Date);
+            const date = new Date(expense.EpochDate);
                 return (
                     date.getMonth() === month && // JS months are 0-based (0 = Jan)
                     date.getFullYear() === year
