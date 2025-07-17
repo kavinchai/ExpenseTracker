@@ -39,7 +39,7 @@ const CalendarCell = ({ day, currentDate, isCurrentMonth, baseYear, baseMonth, e
               </div>
             ))}
       </div>
-      <div className="calendarcell-footer">{getDailyTotal()}</div>
+      <div className="calendarcell-footer">{getDailyTotal() !== 0 ? `$${getDailyTotal().toFixed(2)}` : ""}</div>
     </div>
   );
 };

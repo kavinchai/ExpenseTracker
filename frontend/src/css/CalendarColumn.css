@@ -1,7 +1,6 @@
 .calendarcolumn-base {
 	background-color: #c4ddf3;
 	width: 25%;
-	height: 100%;
 	display: flex;
 	align-items: center;
 	flex-direction: column;
@@ -28,4 +27,13 @@
 	justify-content: center;
 	align-items: center;
 	text-align: center;
+}
+
+.calendarcolumn-title {
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.calendarcolumn-figure {
+	font-size: 14px;
 }

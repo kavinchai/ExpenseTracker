@@ -7,7 +7,7 @@
 }
 
 .calendargrid-days-in-week {
-	background-color: #f0f0f0;
+	background-color: transparent;
 	padding: 8px;
 	text-align: center;
 	font-weight: bold;
@@ -17,4 +17,5 @@
 	justify-content: center;
 	height: 40px;
 	box-sizing: border-box;
+	font-size: 18px;
 }
