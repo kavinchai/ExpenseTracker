@@ -17,7 +17,7 @@ const CalendarColumn = ({currentDate, expenses}) => {
                     Monthly Total
                 </div>
                 <div className="calendarcolumn-tr calendarcolumn-figure" >
-                    {getMonthlyTotal(expenses, currentDate.getMonth(), currentDate.getFullYear())}
+                    ${getMonthlyTotal(expenses, currentDate.getMonth(), currentDate.getFullYear())}
                 </div>
             </div>
             <div className="calendarcolumn-tblock">
@@ -25,7 +25,7 @@ const CalendarColumn = ({currentDate, expenses}) => {
                     Monthly Total
                 </div>
                 <div className="calendarcolumn-tr calendarcolumn-figure">
-                    {getMonthlyTotal(expenses, currentDate.getMonth(), currentDate.getFullYear())}
+                    ${getMonthlyTotal(expenses, currentDate.getMonth(), currentDate.getFullYear())}
                 </div>
             </div>
         </div>

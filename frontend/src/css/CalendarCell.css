@@ -1,6 +1,6 @@
 .calendarcell-base {
 	background-color: #ffffff;
-	padding: 12px 0;
+	padding: 0.75rem 0;
 	cursor: pointer;
 	overflow: hidden;
 	display: flex;
@@ -9,7 +9,8 @@
 	border-width: 2px;
 	border-style: solid;
 	border-color: black;
-	min-height: 75px; /* Height of cells */
+	min-height: var(--cell-min-height);
+	background-color: rgba(240, 240, 240, 0.1);
 }
 
 .calendarcell-base:hover {
@@ -22,15 +23,16 @@
 }
 
 .calendarcell-header {
-	font-size: 14px;
+	font-size: 0.9rem;
 	font-weight: bold;
-	margin-bottom: 4px;
+	margin-bottom: 0.25rem;
 	text-align: center;
 	flex-shrink: 0;
 }
 
 .calendarcell-body {
 	flex: 1;
+	font-size: 0.85rem;
 	text-align: center;
 	display: flex;
 	flex-direction: column;
@@ -40,19 +42,19 @@
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	background-color: transparent;
-	padding: 2px 4px;
+	padding: 0.125rem 0.25rem;
 	align-items: center;
 	text-align: center;
 	flex-shrink: 0;
 }
 
 .calendarcell-td {
-	padding: 2px 4px;
+	padding: 0.125rem 0.25rem;
 	text-align: center;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
 	white-space: normal;
-	font-size: 12px;
+	font-size: 0.8rem;
 	color: #000;
 }
 
@@ -66,6 +68,7 @@
 	justify-content: center;
 	align-items: center;
 	color: #333;
-	font-size: 13px;
+	font-size: var(--footer-font-size);
+	font-weight: bold;
 	flex-shrink: 0;
 }

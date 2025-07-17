@@ -1,11 +1,11 @@
 .calendar-base {
-	/* background-color: red; */
 	background-color: rgb(244, 244, 250);
 	width: 100vw;
 	min-height: 100vh;
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
+	font-size: var(--base-font-size);
 	font-family: monospace;
 }
 
@@ -15,8 +15,8 @@
 	justify-content: center;
 	align-items: center;
 	width: 100%;
-	height: 60px;
-	font-size: 12px;
+	height: var(--header-height);
+	font-size: 0.85rem; /* Relative to base font size */
 	flex-shrink: 0;
 	position: sticky;
 	top: 0;
@@ -25,7 +25,7 @@
 
 .calendar-body {
 	/* background-color: yellow; */
-	width: 80%;
+	width: var(--calendar-width);
 	flex: 1;
 	display: flex;
 	align-self: center;
