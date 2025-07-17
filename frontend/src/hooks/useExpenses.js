@@ -6,12 +6,9 @@ export const useExpenses = () => {
     useEffect(() => {
         const getExpenses = async () => {
             const { data } = await supabase.from("Expense").select();
-            console.log(data);
-
             setExpenses(data || []);
         };
         getExpenses();
-
     }, []);
     return expenses;
 }
