@@ -14,7 +14,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: var(--header-height);
+  height: var(--calendar-header-height);
   font-size: 0.85rem;
   flex-shrink: 0;
   position: sticky;
@@ -31,8 +31,10 @@
 
 .calendar-nav-btn {
   background-color: rgb(117, 117, 117);
-  border-style: hidden;
   border-radius: 5px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: black;
   height: 40%;
   width: 2%;
   font-weight: bold;
