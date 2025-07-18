@@ -65,7 +65,6 @@
 .calendarcell-footer {
   display: flex;
   justify-content: center;
-  align-items: center;
   color: #333;
   font-size: var(--footer-font-size);
   font-weight: bold;

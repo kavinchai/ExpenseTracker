@@ -1,4 +1,4 @@
-.calendarcolumn-base {
+.budgetcolumn-base {
   /* background-color: white; */
   width: 25%;
   display: flex;
@@ -8,7 +8,7 @@
   padding: 20px;
 }
 
-.calendarcolumn-tblock {
+.budgetcolumn-tblock {
   background-color: #c4ddf3;
   width: 80%;
   display: flex;
@@ -20,7 +20,7 @@
   margin: 10px;
 }
 
-.calendarcolumn-tr {
+.budgetcolumn-tr {
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -29,11 +29,11 @@
   text-align: center;
 }
 
-.calendarcolumn-title {
+.budgetcolumn-title {
   font-weight: bold;
-  font-size: 16px;
+  font-size: 14px;
 }
 
-.calendarcolumn-figure {
+.budgetcolumn-figure {
   font-size: 14px;
 }

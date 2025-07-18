@@ -3,6 +3,7 @@ import { useCalendar } from "../hooks/useCalendar";
 import { useExpenses } from "../hooks/useExpenses";
 import CalendarGrid from "./CalendarGrid";
 import CalendarColumn from "./CalendarColumn";
+import BudgetColumn from "./BudgetColumn";
 import "../css/Calendar.css";
 
 const Calendar = () => {
@@ -13,7 +14,7 @@ const Calendar = () => {
   const expenses = useExpenses();
 
   const changeMonth = (offset) => {
-    setCurrentDate(curr => {
+    setCurrentDate((curr) => {
       const newDate = new Date(curr);
       newDate.setMonth(curr.getMonth() + offset);
       return newDate;
@@ -23,13 +24,26 @@ const Calendar = () => {
   return (
     <div className="calendar-base">
       <div className="calendar-head">
-        <button className="calendar-nav-btn" onClick={() => changeMonth(-1)}>{'<'}</button>
-        <h2 className="calendar-month">{currentDate.toLocaleString("default", { month: "long" })} {year}</h2>
-        <button className="calendar-nav-btn" onClick={() => changeMonth(1)}>{'>'}</button>
+        <button className="calendar-nav-btn" onClick={() => changeMonth(-1)}>
+          {"<"}
+        </button>
+        <h2 className="calendar-month">
+          {currentDate.toLocaleString("default", { month: "long" })} {year}
+        </h2>
+        <button className="calendar-nav-btn" onClick={() => changeMonth(1)}>
+          {">"}
+        </button>
       </div>
       <div className="calendar-body">
-        <CalendarGrid days={days} currentDate={currentDate} month={month} year={year} expenses={expenses}/>
-        <CalendarColumn currentDate={currentDate} expenses={expenses}/>
+        <BudgetColumn />
+        <CalendarGrid
+          days={days}
+          currentDate={currentDate}
+          month={month}
+          year={year}
+          expenses={expenses}
+        />
+        <CalendarColumn currentDate={currentDate} expenses={expenses} />
       </div>
     </div>
   );
