@@ -7,31 +7,44 @@ body {
 }
 
 :root {
-  --base-font-family: monospace;
-
   /* Calendar css */
+  --base-font-family: monospace;
   --calendar-header-height: 60px;
-
-  /* CalendarCell css */
-  --cell-min-height: 75px;
-  --footer-font-size: 14px;
+  --calendar-base-bg-color: rgb(244, 244, 250);
+  --calendar-header-bg-color: rgb(175, 175, 175);
 
   /* CalendarGrid css */
-  --gap-size: 4px;
+  --calendargrid-header-height: 60px;
+  --calendargrid-gap-size: 4px;
+
+  /* CalendarCell css */
+  --calendarcell-min-height: 75px;
+  --calendarcell-footer-font-size: 14px;
+
+  --calendarcell-base-bg-color: rgba(240, 240, 240, 0.1);
+  --calendarcell-dimmed-bg-color: #dadada;
+  --calendarcell-hover-bg-color: #c9d9eb;
+  --calendarcell-text-color: #000;
+  --calendarcell-dimmed-text-color: #aaa;
 
   /* Budget Column and Calendar Column css */
-  --tblock-color: #c4ddf3;
+  --column-tblock-color: #c4ddf3;
   --column-title-font-size: 0.85rem;
   --column-figure-font-size: 0.85rem;
+  --column-border-radius: 10px;
+  --column-border-width: 2px;
+  --column-border-style: solid;
+  --column-border-color: black;
 }
 
 /* MacBook Pro 13" and similar smaller laptops (1280px - 1440px) */
 @media screen and (max-width: 1440px) and (min-width: 1200px) {
   :root {
     --calendar-header-height: 50px;
-    --cell-min-height: 100px;
-    --gap-size: 3px;
-    --footer-font-size: 12px;
+    --calendargrid-header-height: 50px;
+    --calendargrid-gap-size: 3px;
+    --calendarcell-min-height: 100px;
+    --calendarcell-footer-font-size: 12px;
   }
 }
 
@@ -39,9 +52,9 @@ body {
 @media screen and (max-width: 1199px) {
   :root {
     --calendar-header-height: 45px;
-    --footer-font-size: 11px;
-    --cell-min-height: 80px;
-    --gap-size: 2px;
-    --calendar-width: 95%;
+    --calendargrid-header-height: 45px;
+    --calendargrid-gap-size: 2px;
+    --calendarcell-footer-font-size: 11px;
+    --calendarcell-min-height: 80px;
   }
 }

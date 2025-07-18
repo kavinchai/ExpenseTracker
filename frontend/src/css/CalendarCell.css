@@ -9,17 +9,17 @@
   border-width: 2px;
   border-style: solid;
   border-color: black;
-  min-height: var(--cell-min-height);
-  background-color: rgba(240, 240, 240, 0.1);
+  min-height: var(--calendarcell-min-height);
+  background-color: var(--calendarcell-base-bg-color);
 }
 
 .calendarcell-base:hover {
-  background-color: #c9d9eb;
+  background-color: var(--calendarcell-hover-bg-color);
 }
 
 .calendarcell-dimmed {
-  color: #aaa;
-  background-color: #dadada;
+  color: var(--calendarcell-dimmed-text-color);
+  background-color: var(--calendarcell-dimmed-bg-color);
 }
 
 .calendarcell-header {
@@ -54,19 +54,19 @@
   overflow-wrap: break-word;
   white-space: normal;
   font-size: 0.6rem;
-  color: #000;
+  color: var(--calendarcell-text-color);
 }
 
 .expense-category {
   font-weight: normal;
-  color: #222;
+  color: var(--calendarcell-text-color);
 }
 
 .calendarcell-footer {
   display: flex;
   justify-content: center;
-  color: #333;
-  font-size: var(--footer-font-size);
+  color: var(--calendarcell-text-color);
+  font-size: var(--calendarcell-footer-font-size);
   font-weight: bold;
   flex-shrink: 0;
 }

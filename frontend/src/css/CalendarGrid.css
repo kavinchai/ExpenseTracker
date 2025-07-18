@@ -1,11 +1,11 @@
 .calendargrid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  grid-template-rows: var(--header-height) repeat(
+  grid-template-rows: var(--calendargrid-header-height) repeat(
       6,
-      minmax(var(--cell-min-height), auto)
+      minmax(var(--calendarcell-min-height), auto)
     );
-  gap: var(--gap-size);
+  gap: var(--calendargrid-gap-size);
   width: 100%;
 }
 
@@ -14,11 +14,10 @@
   padding: 0.5rem;
   text-align: center;
   font-weight: bold;
-  border-radius: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: var(--header-height);
+  height: var(--calendargrid-header-height);
   box-sizing: border-box;
   font-size: 20px;
 }

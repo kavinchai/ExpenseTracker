@@ -1,15 +1,15 @@
 .calendar-base {
-  background-color: rgb(244, 244, 250);
+  background-color: var(--calendar-base-bg-color);
   width: 100vw;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  font-family: monospace;
+  font-family: var(--base-font-family);
 }
 
-.calendar-head {
-  background-color: rgb(175, 175, 175);
+.calendar-header {
+  background-color: var(--calendar-header-bg-color);
   display: flex;
   justify-content: center;
   align-items: center;

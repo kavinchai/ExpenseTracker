@@ -9,20 +9,19 @@
 }
 
 .calendarcolumn-tblock {
-  background-color: var(--tblock-color);
+  background-color: var(--column-tblock-color);
   width: 80%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  border-radius: 8px;
   margin: 10px;
 
-  border-radius: 10px;
-  border-width: 2px;
-  border-style: solid;
-  border-color: black;
+  border-radius: var(--column-border-radius);
+  border-width: var(--column-border-width);
+  border-style: var(--column-border-style);
+  border-color: var(--column-border-color);
 }
 
 .calendarcolumn-neg {

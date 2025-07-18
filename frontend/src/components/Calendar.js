@@ -25,7 +25,7 @@ const Calendar = () => {
 
   return (
     <div className="calendar-base">
-      <div className="calendar-head">
+      <div className="calendar-header">
         <button className="calendar-nav-btn" onClick={() => changeMonth(-1)}>
           {"<"}
         </button>
