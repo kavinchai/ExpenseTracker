@@ -26,7 +26,7 @@
 .calendar-month {
   display: flex;
   justify-content: center;
-  width: 10%;
+  width: 15%;
 }
 
 .calendar-nav-btn {

@@ -1,4 +1,6 @@
+import { useState } from "react";
 import "../css/CalendarCell.css";
+import CalendarCellForm from "./CalendarCellForm";
 
 const CalendarCell = ({
   day,
@@ -23,7 +25,6 @@ const CalendarCell = ({
 
   const expensesForDay = expenses.filter((expense) => {
     const expenseDate = new Date(expense.EpochDate);
-    console.log(expenseDate);
     return (
       expenseDate.getFullYear() === cellYear &&
       expenseDate.getMonth() === cellMonth &&
@@ -38,11 +39,22 @@ const CalendarCell = ({
     );
   };
 
+  const [showCalendarCellForm, setShowCalendarCellForm] = useState(false);
+  const openCalendarCellForm = () => {
+    console.log("test");
+    setShowCalendarCellForm(true);
+  };
+  const closeCalendarCellForm = () => {
+    console.log(showCalendarCellForm);
+    setShowCalendarCellForm(false);
+  };
+
   return (
     <div
       className={`calendarcell-base ${
         isCurrentMonth ? "" : "calendarcell-dimmed"
       }`}
+      onClick={openCalendarCellForm}
     >
       <div className="calendarcell-header">{day}</div>
       <div className="calendarcell-body">
@@ -58,6 +70,13 @@ const CalendarCell = ({
       <div className="calendarcell-footer">
         {getDailyTotal() !== 0 ? `$${getDailyTotal().toFixed(2)}` : ""}
       </div>
+      {showCalendarCellForm && (
+        <CalendarCellForm
+          closeCalendarCellForm={closeCalendarCellForm}
+          cellDate={cellDate}
+          expensesForDay={expensesForDay}
+        />
+      )}
     </div>
   );
 };
