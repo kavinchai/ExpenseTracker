@@ -4,6 +4,7 @@ import { useExpenses } from "../hooks/useExpenses";
 import CalendarGrid from "./CalendarGrid";
 import CalendarColumn from "./CalendarColumn";
 import BudgetColumn from "./BudgetColumn";
+import budgetJson from "../data/budget.json";
 import "../css/Calendar.css";
 
 const Calendar = () => {
@@ -12,6 +13,7 @@ const Calendar = () => {
   const month = currentDate.getMonth();
   const days = useCalendar(year, month);
   const expenses = useExpenses();
+  const budgetData = budgetJson.data;
 
   const changeMonth = (offset) => {
     setCurrentDate((curr) => {
@@ -35,7 +37,7 @@ const Calendar = () => {
         </button>
       </div>
       <div className="calendar-body">
-        <BudgetColumn />
+        <BudgetColumn budgetData={budgetData} />
         <CalendarGrid
           days={days}
           currentDate={currentDate}
@@ -43,7 +45,11 @@ const Calendar = () => {
           year={year}
           expenses={expenses}
         />
-        <CalendarColumn currentDate={currentDate} expenses={expenses} />
+        <CalendarColumn
+          currentDate={currentDate}
+          budgetData={budgetData}
+          expenses={expenses}
+        />
       </div>
     </div>
   );

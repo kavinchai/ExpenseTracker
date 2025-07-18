@@ -1,6 +1,6 @@
 import "../css/CalendarColumn.css";
 
-const CalendarColumn = ({ currentDate, expenses }) => {
+const CalendarColumn = ({ currentDate, budgetData, expenses }) => {
   const getMonthlyTotal = (expenses, month, year) => {
     return expenses
       .filter((expense) => {
@@ -29,15 +29,16 @@ const CalendarColumn = ({ currentDate, expenses }) => {
       </div>
       <div className="calendarcolumn-tblock">
         <div className="calendarcolumn-tr calendarcolumn-title">
-          Monthly Total
+          Monthly Saved
         </div>
         <div className="calendarcolumn-tr calendarcolumn-figure">
           $
-          {getMonthlyTotal(
-            expenses,
-            currentDate.getMonth(),
-            currentDate.getFullYear()
-          )}
+          {budgetData.disposable_income -
+            getMonthlyTotal(
+              expenses,
+              currentDate.getMonth(),
+              currentDate.getFullYear()
+            )}
         </div>
       </div>
     </div>
