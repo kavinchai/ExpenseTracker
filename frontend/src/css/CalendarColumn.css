@@ -20,6 +20,14 @@
   margin: 10px;
 }
 
+.calendarcolumn-neg {
+  background-color: #f37373;
+}
+
+.calendarcolumn-pos {
+  background-color: #73f38a;
+}
+
 .calendarcolumn-tr {
   padding: 10px;
   display: flex;
