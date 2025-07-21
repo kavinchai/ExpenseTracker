@@ -98,3 +98,7 @@
   color: var(--btn-hover-text-color);
   background-color: var(--btn-hover-bg-color);
 }
+
+.calendarcellform-btn:active {
+  transform: translate(1px, 1px);
+}

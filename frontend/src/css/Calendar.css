@@ -48,6 +48,10 @@
   background-color: var(--btn-hover-bg-color);
 }
 
+.calendar-nav-btn:active {
+  transform: translate(1px, 1px);
+}
+
 .calendar-body {
   /* background-color: yellow; */
   width: 100%;
