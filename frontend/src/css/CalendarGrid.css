@@ -1,23 +1,24 @@
 .calendargrid {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  grid-template-rows: var(--calendargrid-header-height) repeat(
-      6,
-      minmax(var(--calendarcell-min-height), auto)
-    );
-  gap: var(--calendargrid-gap-size);
-  width: 100%;
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	grid-template-rows: var(--calendargrid-header-height) repeat(
+			6,
+			minmax(var(--calendarcell-min-height), auto)
+		);
+	gap: var(--calendargrid-gap-size);
+	width: 100%;
 }
 
 .calendargrid-days-in-week {
-  background-color: transparent;
-  padding: 0.5rem;
-  text-align: center;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: var(--calendargrid-header-height);
-  box-sizing: border-box;
-  font-size: 20px;
+	background-color: transparent;
+	padding: 0.5rem;
+	text-align: center;
+	font-weight: bold;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: var(--calendargrid-header-height);
+	box-sizing: border-box;
+	font-size: 20px;
+	text-decoration: underline;
 }

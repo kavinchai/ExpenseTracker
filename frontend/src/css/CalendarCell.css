@@ -1,72 +1,72 @@
 .calendarcell-base {
-  background-color: #ffffff;
-  padding: 0.75rem 0;
-  cursor: pointer;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  border-radius: 10px;
-  border-width: 2px;
-  border-style: solid;
-  border-color: black;
-  min-height: var(--calendarcell-min-height);
-  background-color: var(--calendarcell-base-bg-color);
+	background-color: #ffffff;
+	padding: 0.75rem 0;
+	cursor: pointer;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	border-radius: 10px;
+	border-width: 2px;
+	border-style: solid;
+	border-color: black;
+	min-height: var(--calendarcell-min-height);
+	background-color: var(--calendarcell-base-bg-color);
 }
 
 .calendarcell-base:hover {
-  background-color: var(--calendarcell-hover-bg-color);
+	background-color: var(--calendarcell-hover-bg-color);
 }
 
 .calendarcell-dimmed {
-  color: var(--calendarcell-dimmed-text-color);
-  background-color: var(--calendarcell-dimmed-bg-color);
+	color: var(--calendarcell-dimmed-text-color);
+	background-color: var(--calendarcell-dimmed-bg-color);
 }
 
 .calendarcell-header {
-  font-size: 0.9rem;
-  font-weight: bold;
-  margin-bottom: 0.25rem;
-  text-align: center;
-  flex-shrink: 0;
+	font-size: 0.9rem;
+	font-weight: bold;
+	margin-bottom: 0.25rem;
+	text-align: center;
+	flex-shrink: 0;
 }
 
 .calendarcell-body {
-  flex: 1;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
+	flex: 1;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
 }
 
 .calendarcell-tr {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  background-color: transparent;
-  padding: 0.125rem 0.25rem;
-  align-items: center;
-  text-align: center;
-  flex-shrink: 0;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	background-color: transparent;
+	padding: 0.125rem 0.25rem;
+	align-items: center;
+	text-align: center;
+	flex-shrink: 0;
 }
 
 .calendarcell-td {
-  padding: 0.125rem 0.25rem;
-  text-align: center;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  white-space: normal;
-  font-size: 0.6rem;
-  color: var(--calendarcell-text-color);
+	padding: 0.125rem 0.25rem;
+	text-align: center;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	white-space: normal;
+	font-size: 0.7rem;
+	color: var(--calendarcell-text-color);
 }
 
 .expense-category {
-  font-weight: normal;
-  color: var(--calendarcell-text-color);
+	font-weight: normal;
+	color: var(--calendarcell-text-color);
 }
 
 .calendarcell-footer {
-  display: flex;
-  justify-content: center;
-  color: var(--calendarcell-text-color);
-  font-size: var(--calendarcell-footer-font-size);
-  font-weight: bold;
-  flex-shrink: 0;
+	display: flex;
+	justify-content: center;
+	color: var(--calendarcell-text-color);
+	font-size: var(--calendarcell-footer-font-size);
+	font-weight: bold;
+	flex-shrink: 0;
 }

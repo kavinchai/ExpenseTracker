@@ -1,104 +1,104 @@
 .calendarcell-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 1000;
 }
 
 .calendarcell-content {
-  background-color: white;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
-  width: 30%;
-  height: 70%;
-  max-width: 90%;
-  display: flex;
-  flex-direction: column;
+	background-color: white;
+	padding: 2rem;
+	border-radius: 12px;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+	width: 30%;
+	height: 70%;
+	max-width: 90%;
+	display: flex;
+	flex-direction: column;
 }
 
 .calendarcellform-base {
-  background-color: rgb(214, 209, 209);
-  padding: 40px;
-  height: 80%;
-  /* width: 50%; */
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-direction: column;
-  box-sizing: border-box;
-  border-radius: 10px;
+	background-color: rgb(214, 209, 209);
+	padding: 40px;
+	height: 80%;
+	/* width: 50%; */
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	flex-direction: column;
+	box-sizing: border-box;
+	border-radius: 10px;
 }
 
 .calendarcellform-tr {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  background-color: transparent;
-  padding: 0.125rem 0.25rem;
-  align-items: center;
-  text-align: center;
-  flex-shrink: 0;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	background-color: transparent;
+	padding: 0.125rem 0.25rem;
+	align-items: center;
+	text-align: center;
+	flex-shrink: 0;
 }
 
 .calendarcellform-td {
-  /* background-color: red; */
-  padding: 0.5rem 1.5rem;
-  text-align: center;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  white-space: normal;
-  font-size: 1rem;
-  color: #000;
+	/* background-color: red; */
+	padding: 0.5rem 1.5rem;
+	text-align: center;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	white-space: normal;
+	font-size: var(--calendarcellform-body-text-size);
+	color: #000;
 }
 
 .expense-category {
-  font-weight: normal;
-  color: #222;
+	font-weight: normal;
+	color: #222;
 }
 
 .calendarcellform-body {
-  width: 100%;
-  /* background-color: red; */
-  flex: 1;
+	width: 100%;
+	/* background-color: red; */
+	flex: 1;
 }
 
 .calendarcellform-footer {
-  /* background-color: green; */
-  font-size: 1rem;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  flex: 1;
+	/* background-color: green; */
+	font-size: var(--calendarcellform-footer-text-size);
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	flex: 1;
 }
 
 .calendarcellform-btn {
-  font-family: var(--btn-font-family);
-  background-color: var(--btn-bg-color);
-  border-radius: var(--btn-border-radius);
-  border-width: var(--btn-border-width);
-  border-style: var(--btn-border-style);
-  border-color: var(--btn-border-color);
-  height: 8%;
-  width: 50%;
-  font-weight: var(--btn-font-weight);
-  color: var(--btn-text-color);
-  align-self: center;
-  margin-top: 20px;
+	font-family: var(--btn-font-family);
+	background-color: var(--btn-bg-color);
+	border-radius: var(--btn-border-radius);
+	border-width: var(--btn-border-width);
+	border-style: var(--btn-border-style);
+	border-color: var(--btn-border-color);
+	height: 8%;
+	width: 50%;
+	font-weight: var(--btn-font-weight);
+	color: var(--btn-text-color);
+	align-self: center;
+	margin-top: 20px;
 }
 
 .calendarcellform-btn:hover {
-  cursor: pointer;
-  color: var(--btn-hover-text-color);
-  background-color: var(--btn-hover-bg-color);
+	cursor: pointer;
+	color: var(--btn-hover-text-color);
+	background-color: var(--btn-hover-bg-color);
 }
 
 .calendarcellform-btn:active {
-  transform: translate(1px, 1px);
+	transform: translate(1px, 1px);
 }
