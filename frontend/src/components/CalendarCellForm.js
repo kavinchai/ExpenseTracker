@@ -4,6 +4,7 @@ const CalendarCellForm = ({
   closeCalendarCellForm,
   cellDate,
   expensesForDay,
+  getDailyTotal,
 }) => {
   return (
     <div className="calendarcell-overlay" onClick={closeCalendarCellForm}>
@@ -16,21 +17,29 @@ const CalendarCellForm = ({
           {cellDate.getDate()} {cellDate.getFullYear()}
         </h3>
         <form className="calendarcellform-base">
-          {expensesForDay.map((expense) => (
-            <div className="calendarcellform-tr" key={expense.Id}>
-              <div className="calendarcellform-td expense-category">
-                {expense.Category}
+          <div className="calendarcellform-body">
+            {expensesForDay.map((expense) => (
+              <div className="calendarcellform-tr" key={expense.Id}>
+                <div className="calendarcellform-td expense-category">
+                  {expense.Category}
+                </div>
+                <div className="calendarcellform-td">
+                  ${expense.Amount.toFixed(2)}
+                </div>
               </div>
-              <div className="calendarcellform-td">
-                ${expense.Amount.toFixed(2)}
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
+          <div className="calendarcellform-footer">
+            {getDailyTotal() !== 0 ? `Total: $${getDailyTotal()}` : ""}
+          </div>
         </form>
-        <button type="button" onClick={closeCalendarCellForm}>
+        <button
+          type="button"
+          onClick={closeCalendarCellForm}
+          className="calendarcellform-btn"
+        >
           Close
         </button>
-        {}
       </div>
     </div>
   );

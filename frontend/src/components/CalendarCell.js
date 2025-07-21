@@ -75,6 +75,7 @@ const CalendarCell = ({
           closeCalendarCellForm={closeCalendarCellForm}
           cellDate={cellDate}
           expensesForDay={expensesForDay}
+          getDailyTotal={getDailyTotal}
         />
       )}
     </div>
