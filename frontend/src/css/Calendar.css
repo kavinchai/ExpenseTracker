@@ -30,21 +30,22 @@
 }
 
 .calendar-nav-btn {
-  background-color: rgb(117, 117, 117);
-  border-radius: 5px;
-  border-width: 2px;
-  border-style: solid;
-  border-color: black;
+  font-family: var(--btn-font-family);
+  background-color: var(--btn-bg-color);
+  border-radius: var(--btn-border-radius);
+  border-width: var(--btn-border-width);
+  border-style: var(--btn-border-style);
+  border-color: var(--btn-border-color);
   height: 40%;
   width: 2%;
-  font-weight: bold;
-  color: white;
+  font-weight: var(--btn-font-weight);
+  color: var(--btn-text-color);
 }
 
 .calendar-nav-btn:hover {
   cursor: pointer;
-  color: black;
-  background-color: rgb(206, 203, 203);
+  color: var(--btn-hover-text-color);
+  background-color: var(--btn-hover-bg-color);
 }
 
 .calendar-body {

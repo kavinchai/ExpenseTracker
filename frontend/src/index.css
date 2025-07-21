@@ -35,6 +35,18 @@ body {
   --column-border-width: 2px;
   --column-border-style: solid;
   --column-border-color: black;
+
+  /* Button styling*/
+  --btn-font-family: monospace;
+  --btn-bg-color: rgb(117, 117, 117);
+  --btn-hover-bg-color: rgb(206, 203, 203);
+  --btn-border-radius: 5px;
+  --btn-border-width: 2px;
+  --btn-border-style: solid;
+  --btn-border-color: black;
+  --btn-font-weight: bold;
+  --btn-text-color: white;
+  --btn-hover-text-color: black;
 }
 
 /* MacBook Pro 13" and similar smaller laptops (1280px - 1440px) */

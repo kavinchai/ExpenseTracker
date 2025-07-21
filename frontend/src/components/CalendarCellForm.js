@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "../css/CalendarCellForm.css";
 
 const CalendarCellForm = ({
@@ -6,6 +7,7 @@ const CalendarCellForm = ({
   expensesForDay,
   getDailyTotal,
 }) => {
+  const [editCategory, setEditCategory] = useState(false);
   return (
     <div className="calendarcell-overlay" onClick={closeCalendarCellForm}>
       <div
@@ -20,8 +22,11 @@ const CalendarCellForm = ({
           <div className="calendarcellform-body">
             {expensesForDay.map((expense) => (
               <div className="calendarcellform-tr" key={expense.Id}>
-                <div className="calendarcellform-td expense-category">
-                  {expense.Category}
+                <div
+                  className="calendarcellform-td expense-category"
+                  onClick={() => setEditCategory((prev) => !prev)}
+                >
+                  {editCategory === false ? expense.Category : <div>Test</div>}
                 </div>
                 <div className="calendarcellform-td">
                   ${expense.Amount.toFixed(2)}
