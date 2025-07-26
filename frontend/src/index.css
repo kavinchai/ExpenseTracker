@@ -32,13 +32,13 @@ body {
 	--calendarcellform-footer-text-size: 1.3rem;
 
 	/* Budget Column and Calendar Column css */
-	--column-tblock-color: #c4ddf3;
-	--column-title-font-size: 1.2rem;
-	--column-figure-font-size: 1rem;
-	--column-border-radius: 10px;
-	--column-border-width: 2px;
-	--column-border-style: solid;
-	--column-border-color: black;
+	--datacolumn-tblock-color: #c4ddf3;
+	--datacolumn-title-font-size: 1.2rem;
+	--datacolumn-figure-font-size: 1rem;
+	--datacolumn-border-radius: 10px;
+	--datacolumn-border-width: 2px;
+	--datacolumn-border-style: solid;
+	--datacolumn-border-color: black;
 
 	/* Button styling*/
 	--btn-font-family: monospace;
@@ -63,8 +63,8 @@ body {
 		--calendarcell-footer-font-size: 12px;
 		--calendarcellform-body-text-size: 1rem;
 		--calendarcellform-footer-text-size: 1rem;
-		--column-title-font-size: 0.85rem;
-		--column-figure-font-size: 0.85rem;
+		--datacolumn-title-font-size: 0.85rem;
+		--datacolumn-figure-font-size: 0.85rem;
 	}
 }
 
@@ -78,7 +78,7 @@ body {
 		--calendarcell-min-height: 80px;
 		--calendarcellform-body-text-size: 1rem;
 		--calendarcellform-footer-text-size: 1rem;
-		--column-title-font-size: 0.85rem;
-		--column-figure-font-size: 0.85rem;
+		--datacolumn-title-font-size: 0.85rem;
+		--datacolumn-figure-font-size: 0.85rem;
 	}
 }

@@ -9,9 +9,8 @@ namespace ExpenseTracker.Mappers
             ExpenseDto expenseDto = new ExpenseDto
             {
                 Id = e.Id,
-                Description = e.Description,
-                Amount = e.Amount,
                 Category = e.Category,
+                Amount = e.Amount,
                 Date = e.Date,
                 EpochDate = e.EpochDate
             };
@@ -23,9 +22,8 @@ namespace ExpenseTracker.Mappers
             Expense expense = new Expense
             {
                 Id = ed.Id,
-                Description = ed.Description,
-                Amount = ed.Amount,
                 Category = ed.Category,
+                Amount = ed.Amount,
                 Date = ed.Date,
                 EpochDate = ed.EpochDate
             };

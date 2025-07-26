@@ -1,32 +1,26 @@
-import "../css/BudgetColumn.css";
+// import "../css/BudgetColumn.css";
+import DataColumn from "./DataColumn";
 
 const BudgetColumn = ({ budgetData }) => {
-  return (
-    <div className="budgetcolumn-base">
-      <div className="budgetcolumn-tblock">
-        <div className="budgetcolumn-tr budgetcolumn-title">
-          Monthly Paycheck
-        </div>
-        <div className="budgetcolumn-tr budgetcolumn-figure">
-          ${budgetData.monthly_paycheck}
-        </div>
-      </div>
-      <div className="budgetcolumn-tblock">
-        <div className="budgetcolumn-tr budgetcolumn-title">Monthly Rent</div>
-        <div className="budgetcolumn-tr budgetcolumn-figure">
-          ${budgetData.monthly_rent}
-        </div>
-      </div>
-      <div className="budgetcolumn-tblock">
-        <div className="budgetcolumn-tr budgetcolumn-title">
-          Disposable Income
-        </div>
-        <div className="budgetcolumn-tr budgetcolumn-figure">
-          ${budgetData.disposable_income}
-        </div>
-      </div>
-    </div>
-  );
+	const budgetItems = [
+		{
+			id: "monthly_paycheck",
+			title: "Monthly Paycheck",
+			value: budgetData.monthly_paycheck,
+		},
+		{
+			id: "monthly_rent",
+			title: "Monthly Rent",
+			value: budgetData.monthly_rent,
+		},
+		{
+			id: "disposable_income",
+			title: "Disposable Income",
+			value: budgetData.disposable_income,
+		},
+	];
+
+	return <DataColumn data={budgetItems} className="budgetcolumn" />;
 };
 
 export default BudgetColumn;

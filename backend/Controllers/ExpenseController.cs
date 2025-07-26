@@ -31,9 +31,8 @@ namespace ExpenseTracker.Controllers
             var expense = new Expense
             {
                 Id = Guid.NewGuid(),
-                Description = expenseDto.Description,
-                Amount = expenseDto.Amount,
                 Category = expenseDto.Category,
+                Amount = expenseDto.Amount,
                 Date = expenseDto.Date,
                 EpochDate = expenseDto.EpochDate
             };
@@ -57,9 +56,8 @@ namespace ExpenseTracker.Controllers
             }
 
             var expense = existing.Models[0];
-            expense.Description = updatedExpense.Description;
-            expense.Amount = updatedExpense.Amount;
             expense.Category = updatedExpense.Category;
+            expense.Amount = updatedExpense.Amount;
             expense.Date = updatedExpense.Date;
             expense.EpochDate = updatedExpense.EpochDate;
 
