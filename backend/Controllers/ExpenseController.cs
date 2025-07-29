@@ -28,21 +28,32 @@ namespace ExpenseTracker.Controllers
         [HttpPost]
         public async Task<IActionResult> AddExpense(ExpenseDto expenseDto)
         {
-            var currentDateTime = DateTime.UtcNow;
-            var currentEpochTime = ((DateTimeOffset)currentDateTime).ToUnixTimeMilliseconds();
+            DateTime expenseDate;
+            long epochTime;
+
+            if (expenseDto.EpochDate > 0)
+            {
+                expenseDate = DateTimeOffset.FromUnixTimeMilliseconds(expenseDto.EpochDate).DateTime;
+                epochTime = expenseDto.EpochDate;
+            }
+            else
+            {
+                expenseDate = DateTime.UtcNow;
+                epochTime = ((DateTimeOffset)expenseDate).ToUnixTimeMilliseconds();
+            }
 
             var expense = new Expense
             {
                 Id = Guid.NewGuid(),
                 Category = expenseDto.Category,
                 Amount = expenseDto.Amount,
-                Date = currentDateTime,
-                EpochDate = currentEpochTime
+                Date = expenseDate,
+                EpochDate = epochTime
             };
 
             var response = await _supabase.From<Expense>().Insert(expense);
             var insertedExpense = response.Models.FirstOrDefault();
-            return CreatedAtAction(nameof(GetExpenses), new { id = insertedExpense?.Id }, expenseDto);
+            return CreatedAtAction(nameof(GetExpenses), new { id = insertedExpense?.Id }, ExpenseMapper.ModelToDto(insertedExpense));
         }
 
         [HttpPut("{id}")]

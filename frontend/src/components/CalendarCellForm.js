@@ -6,7 +6,7 @@ const CalendarCellForm = ({
 	cellDate,
 	expensesForDay,
 	getDailyTotal,
-	onExpenseAdded,
+	handleExpenseAdded,
 }) => {
 	const [editCategory, setEditCategory] = useState(false);
 	const [isAddingExpense, setIsAddingExpense] = useState(false);
@@ -31,10 +31,10 @@ const CalendarCellForm = ({
 		}
 
 		try {
-			// Prepare the expense data for POST request
 			const expenseData = {
-				category: newExpense.category.trim(),
-				amount: parseFloat(newExpense.amount),
+				Category: newExpense.category.trim(),
+				Amount: parseFloat(newExpense.amount),
+				EpochDate: cellDate.getTime(),
 			};
 
 			// Make the POST request
@@ -58,12 +58,11 @@ const CalendarCellForm = ({
 			setNewExpense({ category: "", amount: "" });
 
 			// Call the callback to refresh parent data
-			if (onExpenseAdded) {
-				onExpenseAdded(savedExpense);
+			if (handleExpenseAdded) {
+				handleExpenseAdded(savedExpense);
 			}
 		} catch (error) {
 			console.error("Error saving expense:", error);
-			// alert("Failed to save expense. Please try again.");
 		}
 	};
 
