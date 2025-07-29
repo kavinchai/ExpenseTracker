@@ -28,13 +28,16 @@ namespace ExpenseTracker.Controllers
         [HttpPost]
         public async Task<IActionResult> AddExpense(ExpenseDto expenseDto)
         {
+            var currentDateTime = DateTime.UtcNow;
+            var currentEpochTime = ((DateTimeOffset)currentDateTime).ToUnixTimeMilliseconds();
+
             var expense = new Expense
             {
                 Id = Guid.NewGuid(),
                 Category = expenseDto.Category,
                 Amount = expenseDto.Amount,
-                Date = expenseDto.Date,
-                EpochDate = expenseDto.EpochDate
+                Date = currentDateTime,
+                EpochDate = currentEpochTime
             };
 
             var response = await _supabase.From<Expense>().Insert(expense);
