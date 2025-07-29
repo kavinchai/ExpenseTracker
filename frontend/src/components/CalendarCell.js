@@ -1,6 +1,7 @@
 import { useState, useMemo } from "react";
 import "../css/CalendarCell.css";
 import CalendarCellForm from "./CalendarCellForm";
+import { dateUtils } from "../utils/dateUtils";
 
 const CalendarCell = ({
 	day,
@@ -12,27 +13,16 @@ const CalendarCell = ({
 	handleExpenseAdded,
 }) => {
 	const [showCalendarCellForm, setShowCalendarCellForm] = useState(false);
-	const cellDate = new Date(baseYear, baseMonth, day);
 
-	if (!isCurrentMonth) {
-		if (day < 15) {
-			cellDate.setMonth(baseMonth + 1);
-		} else {
-			cellDate.setMonth(baseMonth - 1);
-		}
-	}
-	const cellYear = cellDate.getFullYear();
-	const cellMonth = cellDate.getMonth();
-	const cellDay = cellDate.getDate();
+	const cellDate = useMemo(
+		() => dateUtils.calculateCellDate(day, isCurrentMonth, baseYear, baseMonth),
+		[day, isCurrentMonth, baseYear, baseMonth]
+	);
 
-	const expensesForDay = expenses.filter((expense) => {
-		const expenseDate = new Date(expense.EpochDate);
-		return (
-			expenseDate.getFullYear() === cellYear &&
-			expenseDate.getMonth() === cellMonth &&
-			expenseDate.getDate() === cellDay
-		);
-	});
+	const expensesForDay = useMemo(
+		() => dateUtils.filterExpensesByDate(expenses, cellDate),
+		[expenses, cellDate]
+	);
 
 	const dailyTotal = useMemo(
 		() =>
