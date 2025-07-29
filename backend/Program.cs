@@ -23,8 +23,10 @@ builder.Services.AddDbContext<ExpenseContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 
-var url = Environment.GetEnvironmentVariable("SUPABASE_URL");
-var apiKey = Environment.GetEnvironmentVariable("SUPABASE_API_KEY");
+var url = Environment.GetEnvironmentVariable("SUPABASE_URL") 
+    ?? throw new InvalidOperationException("SUPABASE_URL environment variable is required");
+var apiKey = Environment.GetEnvironmentVariable("SUPABASE_API_KEY") 
+    ?? throw new InvalidOperationException("SUPABASE_API_KEY environment variable is required");
 
 var supabase = new Supabase.Client(url, apiKey);
 await supabase.InitializeAsync();

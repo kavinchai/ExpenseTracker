@@ -53,6 +53,10 @@ namespace ExpenseTracker.Controllers
 
             var response = await _supabase.From<Expense>().Insert(expense);
             var insertedExpense = response.Models.FirstOrDefault();
+            if (insertedExpense == null)
+            {
+                return StatusCode(500, "Failed to create expense");
+            }
             return CreatedAtAction(nameof(GetExpenses), new { id = insertedExpense?.Id }, ExpenseMapper.ModelToDto(insertedExpense));
         }
 
@@ -92,11 +96,11 @@ namespace ExpenseTracker.Controllers
                 return NotFound();
             }
 
-            // await _supabase.From<Expense>().Delete().Filter("Id", Operator.Equals, id.ToString()).Execute();
             await _supabase
                 .From<Expense>()
                 .Filter("Id", Operator.Equals, id.ToString())
                 .Delete();
+
             return NoContent();
         }
     }

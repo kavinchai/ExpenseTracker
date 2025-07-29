@@ -4,8 +4,13 @@ namespace ExpenseTracker.Mappers
 {
     public static class ExpenseMapper
     {
-        public static ExpenseDto ModelToDto(Expense e)
+        public static ExpenseDto ModelToDto(Expense? e)
         {
+            if (e == null)
+            {
+                throw new ArgumentNullException(nameof(e), "Expense cannot be null");
+            }
+
             ExpenseDto expenseDto = new ExpenseDto
             {
                 Id = e.Id,
@@ -17,8 +22,13 @@ namespace ExpenseTracker.Mappers
             return expenseDto;
         }
 
-        public static Expense DtoToModel(ExpenseDto ed)
+        public static Expense DtoToModel(ExpenseDto? ed)
         {
+            if (ed == null)
+            {
+                throw new ArgumentNullException(nameof(ed), "ExpenseDto cannot be null");
+            }
+            
             Expense expense = new Expense
             {
                 Id = ed.Id,
