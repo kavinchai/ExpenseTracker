@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { expenseService } from "../services/expenseService";
 import "../css/CalendarCellForm.css";
 
 const CalendarCellForm = ({
@@ -37,20 +38,7 @@ const CalendarCellForm = ({
 				EpochDate: cellDate.getTime(),
 			};
 
-			// Make the POST request
-			const response = await fetch("https://localhost:7012/api/Expenses", {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify(expenseData),
-			});
-
-			if (!response.ok) {
-				throw new Error("Failed to save expense");
-			}
-
-			const savedExpense = await response.json();
+			const savedExpense = await expenseService.createExpense(expenseData);
 			console.log("Expense saved:", savedExpense);
 
 			// Reset form

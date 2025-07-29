@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { expenseService } from "../services/expenseService";
 
 export const useExpenses = () => {
 	const [expenses, setExpenses] = useState([]);
@@ -7,8 +8,7 @@ export const useExpenses = () => {
 	const fetchExpenses = async () => {
 		try {
 			setLoading(true);
-			const response = await fetch("https://localhost:7012/api/Expenses");
-			const data = await response.json();
+			const data = await expenseService.getExpenses();
 			setExpenses(data);
 		} catch (error) {
 			console.error("Error fetching expenses: ", error);
