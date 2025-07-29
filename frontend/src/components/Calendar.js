@@ -8,51 +8,57 @@ import budgetJson from "../data/budget.json";
 import "../css/Calendar.css";
 
 const Calendar = () => {
-  const [currentDate, setCurrentDate] = useState(new Date());
-  const year = currentDate.getFullYear();
-  const month = currentDate.getMonth();
-  const days = useCalendar(year, month);
-  const expenses = useExpenses();
-  const budgetData = budgetJson.data;
+	const [currentDate, setCurrentDate] = useState(new Date());
+	const year = currentDate.getFullYear();
+	const month = currentDate.getMonth();
+	const days = useCalendar(year, month);
+	const { expenses, refreshExpenses } = useExpenses();
+	const budgetData = budgetJson.data;
 
-  const changeMonth = (offset) => {
-    setCurrentDate((curr) => {
-      const newDate = new Date(curr);
-      newDate.setMonth(curr.getMonth() + offset);
-      return newDate;
-    });
-  };
+	const changeMonth = (offset) => {
+		setCurrentDate((curr) => {
+			const newDate = new Date(curr);
+			newDate.setMonth(curr.getMonth() + offset);
+			return newDate;
+		});
+	};
 
-  return (
-    <div className="calendar-base">
-      <div className="calendar-header">
-        <button className="calendar-nav-btn" onClick={() => changeMonth(-1)}>
-          {"<"}
-        </button>
-        <h2 className="calendar-month">
-          {currentDate.toLocaleString("default", { month: "long" })} {year}
-        </h2>
-        <button className="calendar-nav-btn" onClick={() => changeMonth(1)}>
-          {">"}
-        </button>
-      </div>
-      <div className="calendar-body">
-        <BudgetColumn budgetData={budgetData} />
-        <CalendarGrid
-          days={days}
-          currentDate={currentDate}
-          month={month}
-          year={year}
-          expenses={expenses}
-        />
-        <CalendarColumn
-          currentDate={currentDate}
-          budgetData={budgetData}
-          expenses={expenses}
-        />
-      </div>
-    </div>
-  );
+	const handleExpenseAdded = async (newExpense) => {
+		await refreshExpenses();
+		console.log("Expenses refreshed after adding:", newExpense);
+	};
+
+	return (
+		<div className="calendar-base">
+			<div className="calendar-header">
+				<button className="calendar-nav-btn" onClick={() => changeMonth(-1)}>
+					{"<"}
+				</button>
+				<h2 className="calendar-month">
+					{currentDate.toLocaleString("default", { month: "long" })} {year}
+				</h2>
+				<button className="calendar-nav-btn" onClick={() => changeMonth(1)}>
+					{">"}
+				</button>
+			</div>
+			<div className="calendar-body">
+				<BudgetColumn budgetData={budgetData} />
+				<CalendarGrid
+					days={days}
+					currentDate={currentDate}
+					month={month}
+					year={year}
+					expenses={expenses}
+					handleExpenseAdded={handleExpenseAdded}
+				/>
+				<CalendarColumn
+					currentDate={currentDate}
+					budgetData={budgetData}
+					expenses={expenses}
+				/>
+			</div>
+		</div>
+	);
 };
 
 export default Calendar;

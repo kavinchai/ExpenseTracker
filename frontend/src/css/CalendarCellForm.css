@@ -78,14 +78,20 @@
 	flex: 1;
 }
 
+.calendarcellform-buttons {
+	display: flex;
+	flex-direction: column;
+}
+
 .calendarcellform-btn {
+	font-size: var(--calendarcellform-btn-text-size);
 	font-family: var(--btn-font-family);
 	background-color: var(--btn-bg-color);
 	border-radius: var(--btn-border-radius);
 	border-width: var(--btn-border-width);
 	border-style: var(--btn-border-style);
 	border-color: var(--btn-border-color);
-	height: 8%;
+	height: 2rem;
 	width: 50%;
 	font-weight: var(--btn-font-weight);
 	color: var(--btn-text-color);
