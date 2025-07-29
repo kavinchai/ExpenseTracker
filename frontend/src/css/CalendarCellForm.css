@@ -116,4 +116,15 @@
 
 .calendarcellform-input {
 	font-family: var(--btn-font-family);
+	height: 1.5rem;
+	width: 100%;
+	border-color: transparent;
+	border-radius: 4px;
+}
+
+/* To hide up/down arrows from input field */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
 }
