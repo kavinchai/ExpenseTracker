@@ -79,5 +79,25 @@ namespace ExpenseTracker.Controllers
 
             return Ok(ExpenseMapper.ModelToDto(expense));
         }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteExpense(Guid id){
+            var existing = await _supabase
+                            .From<Expense>()
+                            .Filter("Id", Operator.Equals, id.ToString())
+                            .Get();
+
+            if (existing.Models.Count == 0)
+            {
+                return NotFound();
+            }
+
+            // await _supabase.From<Expense>().Delete().Filter("Id", Operator.Equals, id.ToString()).Execute();
+            await _supabase
+                .From<Expense>()
+                .Filter("Id", Operator.Equals, id.ToString())
+                .Delete();
+            return NoContent();
+        }
     }
 }
