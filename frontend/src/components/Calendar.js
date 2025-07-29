@@ -23,11 +23,6 @@ const Calendar = () => {
     });
   };
 
-  const handleExpenseAdded = async (newExpense) => {
-    await refreshExpenses();
-    console.log("Expenses refreshed");
-  };
-
   return (
     <div className="calendar-base">
       <div className="calendar-header">
@@ -45,11 +40,10 @@ const Calendar = () => {
         <BudgetColumn budgetData={budgetData} />
         <CalendarGrid
           days={days}
-          currentDate={currentDate}
           month={month}
           year={year}
           expenses={expenses}
-          handleExpenseAdded={handleExpenseAdded}
+          refreshExpenses={refreshExpenses}
         />
         <CalendarColumn
           currentDate={currentDate}

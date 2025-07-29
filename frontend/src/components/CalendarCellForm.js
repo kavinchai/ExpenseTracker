@@ -8,7 +8,7 @@ const CalendarCellForm = ({
   cellDate,
   expensesForDay,
   dailyTotal,
-  handleExpenseAdded,
+  handleExpenseChanges,
 }) => {
   const [editCategory, setEditCategory] = useState(false);
   const [isAddingExpense, setIsAddingExpense] = useState(false);
@@ -47,8 +47,8 @@ const CalendarCellForm = ({
       setNewExpense({ category: "", amount: "" });
 
       // Call the callback to refresh parent data
-      if (handleExpenseAdded) {
-        handleExpenseAdded(savedExpense);
+      if (handleExpenseChanges) {
+        handleExpenseChanges(savedExpense);
       }
     } catch (error) {
       console.error("Error saving expense:", error);
@@ -61,8 +61,8 @@ const CalendarCellForm = ({
       console.log("Expense deleted:", expenseId);
 
       // Refresh the expenses for the day
-      if (handleExpenseAdded) {
-        handleExpenseAdded();
+      if (handleExpenseChanges) {
+        handleExpenseChanges();
       }
     } catch (error) {
       console.error("Error deleting expense:", error);
