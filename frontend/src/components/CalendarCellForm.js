@@ -112,8 +112,8 @@ const CalendarCellForm = ({
 											handleInputChange("amount", e.target.value)
 										}
 										className="calendarcellform-input"
-										step="0.01"
-										min="0"
+										// step="0.01"
+										// min="0"
 									/>
 								</div>
 							</div>

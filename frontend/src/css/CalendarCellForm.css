@@ -108,3 +108,12 @@
 .calendarcellform-btn:active {
 	transform: translate(1px, 1px);
 }
+
+.calendarcellform-add-controls {
+	display: flex;
+	gap: 2rem;
+}
+
+.calendarcellform-input {
+	font-family: var(--btn-font-family);
+}
