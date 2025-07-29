@@ -6,7 +6,7 @@ const CalendarCellForm = ({
 	closeCalendarCellForm,
 	cellDate,
 	expensesForDay,
-	getDailyTotal,
+	dailyTotal,
 	handleExpenseAdded,
 }) => {
 	const [editCategory, setEditCategory] = useState(false);
@@ -118,7 +118,7 @@ const CalendarCellForm = ({
 						)}
 					</div>
 					<div className="calendarcellform-footer">
-						{getDailyTotal() !== 0 ? `Total: $${getDailyTotal()}` : ""}
+						{dailyTotal !== 0 ? `Total: $${dailyTotal}` : ""}
 					</div>
 				</form>
 

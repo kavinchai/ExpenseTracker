@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import "../css/CalendarCell.css";
 import CalendarCellForm from "./CalendarCellForm";
 
@@ -11,6 +11,7 @@ const CalendarCell = ({
 	expenses,
 	handleExpenseAdded,
 }) => {
+	const [showCalendarCellForm, setShowCalendarCellForm] = useState(false);
 	const cellDate = new Date(baseYear, baseMonth, day);
 
 	if (!isCurrentMonth) {
@@ -33,14 +34,15 @@ const CalendarCell = ({
 		);
 	});
 
-	const getDailyTotal = () => {
-		return expensesForDay.reduce(
-			(total, expense) => total + parseFloat(expense.Amount),
-			0
-		);
-	};
+	const dailyTotal = useMemo(
+		() =>
+			expensesForDay.reduce(
+				(total, expense) => total + parseFloat(expense.Amount),
+				0
+			),
+		[expensesForDay]
+	);
 
-	const [showCalendarCellForm, setShowCalendarCellForm] = useState(false);
 	const openCalendarCellForm = () => setShowCalendarCellForm(true);
 	const closeCalendarCellForm = () => setShowCalendarCellForm(false);
 
@@ -65,14 +67,14 @@ const CalendarCell = ({
 				))}
 			</div>
 			<div className="calendarcell-footer">
-				{getDailyTotal() !== 0 ? `$${getDailyTotal().toFixed(2)}` : ""}
+				{dailyTotal !== 0 ? `$${dailyTotal.toFixed(2)}` : ""}
 			</div>
 			{showCalendarCellForm && (
 				<CalendarCellForm
 					closeCalendarCellForm={closeCalendarCellForm}
 					cellDate={cellDate}
 					expensesForDay={expensesForDay}
-					getDailyTotal={getDailyTotal}
+					dailyTotal={dailyTotal}
 					handleExpenseAdded={handleExpenseAdded}
 				/>
 			)}
