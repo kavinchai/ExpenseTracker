@@ -1,50 +1,104 @@
+/* ==========================================================================
+   Data Column Component Styles
+   ========================================================================== */
+
+/* Base Column Container
+   ========================================================================== */
+
 .datacolumn-base {
-	width: 25%;
-	display: flex;
-	align-items: center;
-	flex-direction: column;
-	box-sizing: border-box;
-	padding: 20px;
+  /* Dimensions */
+  width: 25%;
+
+  /* Layout */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /* Spacing */
+  padding: 20px;
+
+  /* Box Model */
+  box-sizing: border-box;
 }
+
+/* Data Block Container
+   ========================================================================== */
 
 .datacolumn-tblock {
-	background-color: var(--datacolumn-tblock-color);
-	width: 80%;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-	margin: 10px;
+  /* Dimensions */
+  width: 80%;
 
-	border-radius: var(--datacolumn-border-radius);
-	border-width: var(--datacolumn-border-width);
-	border-style: var(--datacolumn-border-style);
-	border-color: var(--datacolumn-border-color);
+  /* Styling */
+  background-color: var(--datacolumn-tblock-color);
+  border-radius: var(--datacolumn-border-radius);
+  border: var(--datacolumn-border-width) var(--datacolumn-border-style)
+    var(--datacolumn-border-color);
+
+  /* Layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  /* Typography */
+  text-align: center;
+
+  /* Spacing */
+  margin: 10px;
+
+  /* Transitions */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
+.datacolumn-tblock:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Data Block Content Rows
+   ========================================================================== */
 
 .datacolumn-tr {
-	padding: 10px;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
+  /* Layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  /* Typography */
+  text-align: center;
+
+  /* Spacing */
+  padding: 10px;
 }
 
+/* Typography Styles
+   ========================================================================== */
+
 .datacolumn-title {
-	font-weight: bold;
-	font-size: var(--datacolumn-title-font-size);
+  /* Typography */
+  font-weight: bold;
+  font-size: var(--datacolumn-title-font-size);
+
+  /* Spacing */
+  margin-bottom: 0.25rem;
 }
 
 .datacolumn-figure {
-	font-size: var(--datacolumn-figure-font-size);
+  /* Typography */
+  font-size: var(--datacolumn-figure-font-size);
+  font-weight: 600;
 }
 
+/* Status Color Variants
+   ========================================================================== */
+
 .datacolumn-neg {
-	background-color: #f37373;
+  /* Styling */
+  background-color: #f37373;
 }
 
 .datacolumn-pos {
-	background-color: #73f38a;
+  /* Styling */
+  background-color: #73f38a;
 }

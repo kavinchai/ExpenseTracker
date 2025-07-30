@@ -1,73 +1,119 @@
+/* ==========================================================================
+   Calendar Cell Component Styles
+   ========================================================================== */
+
+/* Base Cell Container
+   ========================================================================== */
+
 .calendarcell-base {
-  background-color: #ffffff;
-  padding: 0.75rem 0;
-  cursor: pointer;
-  overflow: hidden;
+  /* Dimensions */
+  min-height: var(--calendarcell-min-height);
+
+  /* Styling */
+  background-color: var(--calendarcell-base-bg-color);
+  border-radius: 10px;
+  border: 2px solid black;
+
+  /* Layout */
   display: flex;
   flex-direction: column;
-  border-radius: 10px;
-  border-width: 2px;
-  border-style: solid;
-  border-color: black;
-  min-height: var(--calendarcell-min-height);
-  background-color: var(--calendarcell-base-bg-color);
+  overflow: hidden;
+
+  /* Spacing */
+  padding: 0.75rem 0;
+
+  /* Interactions */
+  cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
 .calendarcell-base:hover {
   background-color: var(--calendarcell-hover-bg-color);
 }
 
+/* Cell States
+   ========================================================================== */
+
 .calendarcell-dimmed {
+  /* Styling */
   color: var(--calendarcell-dimmed-text-color);
   background-color: var(--calendarcell-dimmed-bg-color);
 }
 
+/* Cell Sections
+   ========================================================================== */
+
 .calendarcell-header {
+  /* Typography */
   font-size: 0.9rem;
   font-weight: bold;
-  margin-bottom: 0.25rem;
   text-align: center;
+
+  /* Spacing */
+  margin-bottom: 0.25rem;
+
+  /* Layout */
   flex-shrink: 0;
 }
 
 .calendarcell-body {
+  /* Layout */
   flex: 1;
-  text-align: center;
   display: flex;
   flex-direction: column;
+
+  /* Typography */
+  text-align: center;
 }
 
+.calendarcell-footer {
+  /* Layout */
+  display: flex;
+  justify-content: center;
+  flex-shrink: 0;
+
+  /* Typography */
+  color: var(--calendarcell-text-color);
+  font-size: var(--calendarcell-footer-font-size);
+  font-weight: bold;
+}
+
+/* Expense Display Table
+   ========================================================================== */
+
 .calendarcell-tr {
+  /* Layout */
   display: grid;
   grid-template-columns: 1fr 1fr;
-  background-color: transparent;
-  padding: 0.125rem 0.25rem;
   align-items: center;
-  /* text-align: center; */
   flex-shrink: 0;
+
+  /* Styling */
+  background-color: transparent;
+
+  /* Spacing */
+  padding: 0.125rem 0.25rem;
 }
 
 .calendarcell-td {
-  padding: 0.125rem 0.25rem;
+  /* Typography */
+  font-size: var(--calendarcell-body-font-size);
+  color: var(--calendarcell-text-color);
   text-align: right;
   word-wrap: break-word;
   overflow-wrap: break-word;
   white-space: normal;
-  font-size: var(--calendarcell-body-font-size);
-  color: var(--calendarcell-text-color);
+
+  /* Spacing */
+  padding: 0.125rem 0.25rem;
 }
 
+/* Expense Category Specific Styles
+   ========================================================================== */
+
 .expense-category {
+  /* Typography */
   text-align: left;
   font-weight: normal;
   color: var(--calendarcell-text-color);
-}
-
-.calendarcell-footer {
-  display: flex;
-  justify-content: center;
-  color: var(--calendarcell-text-color);
-  font-size: var(--calendarcell-footer-font-size);
-  font-weight: bold;
-  flex-shrink: 0;
 }

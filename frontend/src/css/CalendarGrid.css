@@ -1,24 +1,52 @@
+/* ==========================================================================
+   Calendar Grid Component Styles
+   ========================================================================== */
+
+/* Main Grid Container
+   ========================================================================== */
+
 .calendargrid {
-	display: grid;
-	grid-template-columns: repeat(7, 1fr);
-	grid-template-rows: var(--calendargrid-header-height) repeat(
-			6,
-			minmax(var(--calendarcell-min-height), auto)
-		);
-	gap: var(--calendargrid-gap-size);
-	width: 100%;
+  /* Dimensions */
+  width: 100%;
+
+  /* Layout - Grid System */
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows:
+    var(--calendargrid-header-height)
+    repeat(6, minmax(var(--calendarcell-min-height), auto));
+
+  /* Spacing */
+  gap: var(--calendargrid-gap-size);
 }
 
+/* Weekday Headers
+   ========================================================================== */
+
 .calendargrid-days-in-week {
-	background-color: transparent;
-	padding: 0.5rem;
-	text-align: center;
-	font-weight: bold;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: var(--calendargrid-header-height);
-	box-sizing: border-box;
-	font-size: 20px;
-	text-decoration: underline;
+  /* Dimensions */
+  height: var(--calendargrid-header-height);
+
+  /* Styling */
+  background-color: transparent;
+
+  /* Layout */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Typography */
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: underline;
+
+  /* Spacing */
+  padding: 0.5rem;
+
+  /* Box Model */
+  box-sizing: border-box;
+
+  /* Animation */
+  transition: all 0.2s ease;
 }

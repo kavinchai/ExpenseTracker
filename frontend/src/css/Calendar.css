@@ -1,49 +1,87 @@
+/* ==========================================================================
+   Calendar Main Component Styles
+   ========================================================================== */
+
+/* Base Calendar Container
+   ========================================================================== */
+
 .calendar-base {
-  background-color: var(--calendar-base-bg-color);
+  /* Dimensions */
   width: 100vw;
   min-height: 100vh;
+
+  /* Styling */
+  background-color: var(--calendar-base-bg-color);
+
+  /* Layout */
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;
+
+  /* Typography */
   font-family: var(--base-font-family);
 }
 
+/* Calendar Header
+   ========================================================================== */
+
 .calendar-header {
-  background-color: var(--calendar-header-bg-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: var(--calendar-header-height);
-  font-size: 0.85rem;
-  flex-shrink: 0;
+  /* Positioning */
   position: sticky;
   top: 0;
   z-index: 10;
+
+  /* Dimensions */
+  width: 100%;
+  height: var(--calendar-header-height);
+
+  /* Styling */
+  background-color: var(--calendar-header-bg-color);
+
+  /* Layout */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+
+  /* Typography */
+  font-size: 0.85rem;
+
+  /* Spacing */
   gap: 30px;
 }
 
 .calendar-month {
+  /* Dimensions */
+  width: 15%;
+
+  /* Layout */
   display: flex;
   justify-content: center;
-  width: 15%;
 }
 
 .calendar-nav-btn {
-  font-family: var(--btn-font-family);
-  background-color: var(--btn-bg-color);
-  border-radius: var(--btn-border-radius);
-  border-width: var(--btn-border-width);
-  border-style: var(--btn-border-style);
-  border-color: var(--btn-border-color);
+  /* Dimensions */
   height: 40%;
   width: 2%;
+
+  /* Typography */
+  font-family: var(--btn-font-family);
   font-weight: var(--btn-font-weight);
   color: var(--btn-text-color);
+
+  /* Styling */
+  background-color: var(--btn-bg-color);
+  border-radius: var(--btn-border-radius);
+  border: var(--btn-border-width) var(--btn-border-style)
+    var(--btn-border-color);
+
+  /* Interactions */
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
 .calendar-nav-btn:hover {
-  cursor: pointer;
   color: var(--btn-hover-text-color);
   background-color: var(--btn-hover-bg-color);
 }
@@ -53,8 +91,10 @@
 }
 
 .calendar-body {
-  /* background-color: yellow; */
+  /* Dimensions */
   width: 100%;
+
+  /* Layout */
   flex: 1;
   display: flex;
   align-self: center;
