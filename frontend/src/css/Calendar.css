@@ -84,6 +84,8 @@
 .calendar-nav-btn:hover {
   color: var(--btn-hover-text-color);
   background-color: var(--btn-hover-bg-color);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .calendar-nav-btn:active {
