@@ -88,6 +88,9 @@
   /* Typography */
   font-size: var(--datacolumn-figure-font-size);
   font-weight: 600;
+
+  /* Animation */
+  transition: color 0.3s ease;
 }
 
 /* Status Color Variants
@@ -96,9 +99,44 @@
 .datacolumn-neg {
   /* Styling */
   background-color: #f37373;
+  border-color: #e57373;
+
+  /* Animation */
+  animation: pulse-red 2s infinite;
 }
 
 .datacolumn-pos {
   /* Styling */
   background-color: #73f38a;
+  border-color: #81c784;
+
+  /* Animation */
+  animation: pulse-green 2s infinite;
+}
+
+/* Status Animations
+   ========================================================================== */
+
+@keyframes pulse-red {
+  0% {
+    background-color: #f37373;
+  }
+  50% {
+    background-color: #e57373;
+  }
+  100% {
+    background-color: #f37373;
+  }
+}
+
+@keyframes pulse-green {
+  0% {
+    background-color: #73f38a;
+  }
+  50% {
+    background-color: #81c784;
+  }
+  100% {
+    background-color: #73f38a;
+  }
 }
