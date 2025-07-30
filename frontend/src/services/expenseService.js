@@ -70,6 +70,16 @@ class ExpenseService {
   }
 
   /**
+   * Update an existing expense
+   */
+  async updateExpense(id, expenseData) {
+    return this.request(`/Expenses/${id}`, {
+      method: "PUT",
+      body: JSON.stringify(expenseData),
+    });
+  }
+
+  /**
    * Delete an expense
    */
   async deleteExpense(id) {

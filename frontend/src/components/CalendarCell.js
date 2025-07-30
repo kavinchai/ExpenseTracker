@@ -40,7 +40,7 @@ const CalendarCell = ({
     if (newExpense) {
       console.log("Expenses refreshed after adding: ", newExpense);
     } else {
-      console.log("Expenses refreshed after deletion");
+      console.log("Expenses refreshed");
     }
   };
 
