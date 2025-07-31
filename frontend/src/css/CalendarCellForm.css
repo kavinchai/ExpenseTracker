@@ -6,296 +6,310 @@
    ========================================================================== */
 
 .calendarcell-overlay {
-  /* Positioning */
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
+	/* Positioning */
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1000;
 
-  /* Dimensions */
-  width: 100vw;
-  height: 100vh;
+	/* Dimensions */
+	width: 100vw;
+	height: 100vh;
 
-  /* Styling */
-  background-color: rgba(0, 0, 0, 0.5);
+	/* Styling */
+	background-color: rgba(0, 0, 0, 0.5);
 
-  /* Layout */
-  display: flex;
-  align-items: center;
-  justify-content: center;
+	/* Layout */
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .calendarcell-content {
-  /* Dimensions */
-  width: 30%;
-  height: 70%;
-  max-width: 90%;
+	/* Dimensions */
+	width: 30%;
+	height: 70%;
+	max-width: 90%;
 
-  /* Styling */
-  background-color: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+	/* Styling */
+	background-color: white;
+	border-radius: 12px;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
 
-  /* Layout */
-  display: flex;
-  flex-direction: column;
+	/* Layout */
+	display: flex;
+	flex-direction: column;
 
-  /* Spacing */
-  padding: 2rem;
+	/* Spacing */
+	padding: 2rem;
 }
 
 /* Form Base Container
    ========================================================================== */
 
 .calendarcellform-base {
-  /* Dimensions */
-  height: 80%;
+	/* Dimensions */
+	height: 80%;
 
-  /* Styling */
-  background-color: rgb(214, 209, 209);
-  border-radius: 10px;
+	/* Styling */
+	background-color: rgb(214, 209, 209);
+	border-radius: 10px;
 
-  /* Layout */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
+	/* Layout */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
 
-  /* Spacing */
-  padding: 40px;
+	/* Spacing */
+	padding: 40px;
 
-  /* Box Model */
-  box-sizing: border-box;
+	/* Box Model */
+	box-sizing: border-box;
 }
 
 /* Form Sections
    ========================================================================== */
 
 .calendarcellform-body {
-  /* Dimensions */
-  width: 100%;
+	/* Dimensions */
+	width: 100%;
 
-  /* Layout */
-  flex: 1;
+	/* Layout */
+	flex: 1;
 }
 
 .calendarcellform-footer {
-  /* Dimensions */
-  width: 100%;
+	/* Dimensions */
+	width: 100%;
 
-  /* Typography */
-  font-size: var(--calendarcellform-footer-text-size);
+	/* Typography */
+	font-size: var(--calendarcellform-footer-text-size);
 
-  /* Layout */
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  flex: 1;
+	/* Layout */
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	flex: 1;
 }
 
 /* Table Rows & Cells
    ========================================================================== */
 
 .calendarcellform-tr {
-  /* Layout */
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
+	/* Layout */
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	align-items: center;
+	justify-content: center;
 
-  /* Styling */
-  background-color: transparent;
-  border-radius: 8px;
+	/* Styling */
+	background-color: transparent;
+	border-radius: 8px;
 
-  /* Spacing */
-  padding: 0.125rem 0.25rem;
+	/* Spacing */
+	padding: 0.125rem 0.25rem;
 
-  /* Flexbox */
-  flex-shrink: 0;
+	/* Flexbox */
+	flex-shrink: 0;
 
-  /* Typography */
-  text-align: center;
+	/* Typography */
+	text-align: center;
 
-  /* Transitions */
-  transition: all 0.3s ease-out;
-  transform: translateX(0);
-  opacity: 1;
-  max-height: 40px;
-  overflow: hidden;
+	/* Transitions */
+	transition: all 0.3s ease-out;
+	transform: translateX(0);
+	opacity: 1;
+	max-height: 40px;
+	overflow: hidden;
 }
 
 .calendarcellform-tr:hover {
-  background-color: #f8f9fa;
+	background-color: #f8f9fa;
 }
 
 .calendarcellform-tr-new {
-  /* Inherits from .calendarcellform-tr */
+	/* Inherits from .calendarcellform-tr */
 }
 
 /* Deletion Animation States */
 .calendarcellform-tr-deleting {
-  transform: translateX(-100%);
-  opacity: 0;
-  max-height: 0;
-  margin: 0;
-  padding: 0;
-  background-color: #ffebee;
-  border-left: 3px solid #f44336;
+	transform: translateX(-100%);
+	opacity: 0;
+	max-height: 0;
+	margin: 0;
+	padding: 0;
+	background-color: #ffebee;
+	border-left: 3px solid #f44336;
 }
 
 .calendarcellform-td {
-  /* Typography */
-  font-size: var(--calendarcellform-body-text-size);
-  color: #000;
-  text-align: center;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  white-space: normal;
+	/* Typography */
+	font-size: var(--calendarcellform-body-text-size);
+	color: #000;
+	text-align: center;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	white-space: normal;
 
-  /* Spacing */
-  padding: 0.5rem 1.5rem;
+	/* Spacing */
+	padding: 0.5rem 1.5rem;
 
-  /* Layout */
-  align-items: center;
+	/* Layout */
+	align-items: center;
 }
 
 /* Expense Category & Amount Cells
    ========================================================================== */
 
 .expense-category {
-  /* Typography */
-  font-weight: normal;
-  color: #222;
+	/* Layout */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	/* Typography */
+	font-weight: normal;
+	color: #222;
 }
 
 .expense-amount {
-  /* Layout */
-  display: flex;
-  justify-content: flex-end;
+	/* Layout */
+	display: flex;
+	justify-content: flex-end;
 
-  /* Spacing */
-  gap: 3rem;
+	/* Spacing */
+	gap: 3rem;
 }
 
 /* Form Controls & Inputs
    ========================================================================== */
 
 .calendarcellform-input {
-  /* Dimensions */
-  height: 1.5rem;
-  width: 100%;
+	/* Dimensions */
+	height: 1.5rem;
+	width: 100%;
 
-  /* Styling */
-  border-color: transparent;
-  border-radius: 4px;
+	/* Styling */
+	border-color: transparent;
+	border-radius: 4px;
 
-  /* Typography */
-  font-family: var(--btn-font-family);
+	/* Typography */
+	font-family: var(--btn-font-family);
 }
 
 /* Hide number input spinners */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+	-webkit-appearance: none;
+	margin: 0;
 }
 
 /* Firefox */
 input[type="number"] {
-  -moz-appearance: textfield;
+	-moz-appearance: textfield;
 }
 
 /* Button Container & Controls
    ========================================================================== */
 
 .calendarcellform-buttons {
-  /* Layout */
-  display: flex;
-  flex-direction: column;
+	/* Layout */
+	display: flex;
+	flex-direction: column;
 }
 
 .calendarcellform-add-controls {
-  /* Layout */
-  display: flex;
+	/* Layout */
+	display: flex;
 
-  /* Spacing */
-  gap: 2rem;
+	/* Spacing */
+	gap: 2rem;
 }
 
 /* Button Styles
    ========================================================================== */
 
 .calendarcellform-btn {
-  /* Dimensions */
-  height: 2rem;
-  width: 50%;
+	/* Dimensions */
+	height: 2rem;
+	width: 50%;
 
-  /* Typography */
-  font-size: var(--calendarcellform-btn-text-size);
-  font-family: var(--btn-font-family);
-  font-weight: var(--btn-font-weight);
-  color: var(--btn-text-color);
+	/* Typography */
+	font-size: var(--calendarcellform-btn-text-size);
+	font-family: var(--btn-font-family);
+	font-weight: var(--btn-font-weight);
+	color: var(--btn-text-color);
 
-  /* Styling */
-  background-color: var(--btn-bg-color);
-  border-radius: var(--btn-border-radius);
-  border-width: var(--btn-border-width);
-  border-style: var(--btn-border-style);
-  border-color: var(--btn-border-color);
+	/* Styling */
+	background-color: var(--btn-bg-color);
+	border-radius: var(--btn-border-radius);
+	border-width: var(--btn-border-width);
+	border-style: var(--btn-border-style);
+	border-color: var(--btn-border-color);
 
-  /* Layout */
-  align-self: center;
+	/* Layout */
+	align-self: center;
 
-  /* Spacing */
-  margin-top: 20px;
+	/* Spacing */
+	margin-top: 20px;
 
-  /* Interactions */
-  cursor: pointer;
-  transition: all 0.2s ease;
+	/* Interactions */
+	cursor: pointer;
+	transition: all 0.2s ease;
 }
 
 .calendarcellform-btn:hover {
-  color: var(--btn-hover-text-color);
-  background-color: var(--btn-hover-bg-color);
-}
-
-.calendarcellform-btn:active {
-  transform: translate(1px, 1px);
+	color: var(--btn-hover-text-color);
+	background-color: var(--btn-hover-bg-color);
 }
 
 /* Button Variants */
 .calendarcellform-btn-save {
-  /* Add specific save button styles if needed */
+	/* Add specific save button styles if needed */
 }
 
 .calendarcellform-btn-cancel {
-  /* Add specific cancel button styles if needed */
+	/* Add specific cancel button styles if needed */
 }
 
 /* Delete Icon & Interactions
    ========================================================================== */
 
+.calendarcellform-delete {
+	/* Dimensions */
+	height: 1.7rem;
+	width: 1.7rem;
+
+	/* Layout */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.calendarcellform-delete:active {
+	transform: translateY(2px);
+}
+
 .delete-expense {
-  /* Dimensions */
-  height: 20px;
-  width: 20px;
+	height: 60%;
+	width: 60%;
 
-  /* Interactions */
-  cursor: pointer;
-  transition: all 0.2s ease;
-  opacity: 0.6;
+	/* Interactions */
+	cursor: pointer;
+	transition: all 0.2s ease;
+	opacity: 0.6;
 }
 
-.delete-expense:hover {
-  opacity: 1;
-  transform: scale(1.1) rotate(-10deg);
-  color: #f44336;
-}
-
-.delete-expense:active {
-  transform: translateY(2px);
+.calendarcellform-delete:hover {
+	opacity: 1;
+	border-radius: 8px;
+	border-color: black;
+	border-width: 2px;
+	background-color: rgb(187, 187, 187);
 }
 
 /* Show delete icon on row hover */
 .calendarcellform-tr:hover .delete-expense {
-  opacity: 0.8;
+	opacity: 0.8;
 }

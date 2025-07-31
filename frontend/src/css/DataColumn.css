@@ -6,137 +6,137 @@
    ========================================================================== */
 
 .datacolumn-base {
-  /* Dimensions */
-  width: 25%;
+	/* Dimensions */
+	width: 25%;
 
-  /* Layout */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+	/* Layout */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 
-  /* Spacing */
-  padding: 20px;
+	/* Spacing */
+	padding: 20px;
 
-  /* Box Model */
-  box-sizing: border-box;
+	/* Box Model */
+	box-sizing: border-box;
 }
 
 /* Data Block Container
    ========================================================================== */
 
 .datacolumn-tblock {
-  /* Dimensions */
-  width: 80%;
+	/* Dimensions */
+	width: 80%;
 
-  /* Styling */
-  background-color: var(--datacolumn-tblock-color);
-  border-radius: var(--datacolumn-border-radius);
-  border: var(--datacolumn-border-width) var(--datacolumn-border-style)
-    var(--datacolumn-border-color);
+	/* Styling */
+	background-color: var(--datacolumn-tblock-color);
+	border-radius: var(--datacolumn-border-radius);
+	border: var(--datacolumn-border-width) var(--datacolumn-border-style)
+		var(--datacolumn-border-color);
 
-  /* Layout */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+	/* Layout */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 
-  /* Typography */
-  text-align: center;
+	/* Typography */
+	text-align: center;
 
-  /* Spacing */
-  margin: 10px;
+	/* Spacing */
+	margin: 10px;
 
-  /* Transitions */
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+	/* Transitions */
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .datacolumn-tblock:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	transform: translateY(-2px);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Data Block Content Rows
    ========================================================================== */
 
 .datacolumn-tr {
-  /* Layout */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+	/* Layout */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 
-  /* Typography */
-  text-align: center;
+	/* Typography */
+	text-align: center;
 
-  /* Spacing */
-  padding: 10px;
+	/* Spacing */
+	padding: 10px;
 }
 
 /* Typography Styles
    ========================================================================== */
 
 .datacolumn-title {
-  /* Typography */
-  font-weight: bold;
-  font-size: var(--datacolumn-title-font-size);
+	/* Typography */
+	font-weight: bold;
+	font-size: var(--datacolumn-title-font-size);
 
-  /* Spacing */
-  margin-bottom: 0.25rem;
+	/* Spacing */
+	margin-bottom: 0.25rem;
 }
 
 .datacolumn-figure {
-  /* Typography */
-  font-size: var(--datacolumn-figure-font-size);
-  font-weight: 600;
+	/* Typography */
+	font-size: var(--datacolumn-figure-font-size);
+	font-weight: 600;
 
-  /* Animation */
-  transition: color 0.3s ease;
+	/* Animation */
+	transition: color 0.3s ease;
 }
 
 /* Status Color Variants
    ========================================================================== */
 
 .datacolumn-neg {
-  /* Styling */
-  background-color: #f37373;
-  border-color: #e57373;
+	/* Styling */
+	background-color: #f37373;
+	border-color: #e57373;
 
-  /* Animation */
-  animation: pulse-red 2s infinite;
+	/* Animation */
+	animation: pulse-red 2s infinite;
 }
 
 .datacolumn-pos {
-  /* Styling */
-  background-color: #73f38a;
-  border-color: #81c784;
+	/* Styling */
+	background-color: #73f38a;
+	border-color: #81c784;
 
-  /* Animation */
-  animation: pulse-green 2s infinite;
+	/* Animation */
+	animation: pulse-green 4s infinite;
 }
 
 /* Status Animations
    ========================================================================== */
 
 @keyframes pulse-red {
-  0% {
-    background-color: #f37373;
-  }
-  50% {
-    background-color: #e57373;
-  }
-  100% {
-    background-color: #f37373;
-  }
+	0% {
+		background-color: #f37373;
+	}
+	50% {
+		background-color: #e57373;
+	}
+	100% {
+		background-color: #f37373;
+	}
 }
 
 @keyframes pulse-green {
-  0% {
-    background-color: #73f38a;
-  }
-  50% {
-    background-color: #81c784;
-  }
-  100% {
-    background-color: #73f38a;
-  }
+	0% {
+		background-color: #73f38a;
+	}
+	50% {
+		background-color: #88d38b;
+	}
+	100% {
+		background-color: #73f38a;
+	}
 }
