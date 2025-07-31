@@ -132,17 +132,6 @@
 	/* Inherits from .calendarcellform-tr */
 }
 
-/* Deletion Animation States */
-.calendarcellform-tr-deleting {
-	transform: translateX(-100%);
-	opacity: 0;
-	max-height: 0;
-	margin: 0;
-	padding: 0;
-	background-color: #ffebee;
-	border-left: 3px solid #f44336;
-}
-
 .calendarcellform-td {
 	/* Typography */
 	font-size: var(--calendarcellform-body-text-size);
