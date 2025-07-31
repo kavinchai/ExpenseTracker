@@ -128,10 +128,6 @@
 	background-color: #f8f9fa;
 }
 
-.calendarcellform-tr-new {
-	/* Inherits from .calendarcellform-tr */
-}
-
 .calendarcellform-td {
 	/* Typography */
 	font-size: var(--calendarcellform-body-text-size);
@@ -255,11 +251,9 @@ input[type="number"] {
 
 /* Button Variants */
 .calendarcellform-btn-save {
-	/* Add specific save button styles if needed */
 }
 
 .calendarcellform-btn-cancel {
-	/* Add specific cancel button styles if needed */
 }
 
 /* Delete Icon & Interactions
