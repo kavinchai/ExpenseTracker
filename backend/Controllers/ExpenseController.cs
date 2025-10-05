@@ -6,7 +6,7 @@ using static Supabase.Postgrest.Constants;
 
 namespace ExpenseTracker.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/expenses")]
     [ApiController]
     public class ExpensesController : ControllerBase
     {
@@ -17,12 +17,32 @@ namespace ExpenseTracker.Controllers
             _supabase = supabase;
         }
 
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<ExpenseDto>>> GetExpenses()
+        [HttpGet("{year:int}/{month:int}")]
+        public async Task<ActionResult<IEnumerable<ExpenseDto>>> GetExpenses(int year, int month)
         {
-            var response = await _supabase.From<Expense>().Get();
+            try
+            {
+                // Calculate start and end dates for the month
+                var startDate = new DateTime(year, month, 1, 0, 0, 0, DateTimeKind.Utc);
+                var endDate = startDate.AddMonths(1);
 
-            return Ok(response.Models.Select(ExpenseMapper.ModelToDto));
+                // Convert to epoch timestamps
+                var startEpoch = ((DateTimeOffset)startDate).ToUnixTimeMilliseconds();
+                var endEpoch = ((DateTimeOffset)endDate).ToUnixTimeMilliseconds();
+
+                // Query Supabase with date range
+                var response = await _supabase
+                    .From<Expense>()
+                    .Filter("EpochDate", Operator.GreaterThanOrEqual, startEpoch.ToString())
+                    .Filter("EpochDate", Operator.LessThan, endEpoch.ToString())
+                    .Get();
+
+                return Ok(response.Models.Select(ExpenseMapper.ModelToDto));
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Error fetching expenses: {ex.Message}");
+            }
         }
 
         [HttpPost]
