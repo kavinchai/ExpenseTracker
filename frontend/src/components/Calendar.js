@@ -14,7 +14,7 @@ const Calendar = () => {
 	const year = parseInt(urlYear);
 	const month = parseInt(urlMonth) - 1;
 	const days = useCalendar(year, month);
-	const { expenses, refreshExpenses } = useExpenses(year, month + 1);
+	const { expenses, loading, refreshExpenses } = useExpenses(year, month + 1);
 	const budgetData = budgetJson.data;
 
 	const changeMonth = (offset) => {
@@ -22,6 +22,10 @@ const Calendar = () => {
 		newDate.setMonth(newDate.getMonth() + offset);
 		navigate(`/expenses/${newDate.getFullYear()}/${newDate.getMonth() + 1}`);
 	};
+
+	if (loading) {
+		return <div>Loading...</div>;
+	}
 
 	return (
 		<div className="calendar-base">

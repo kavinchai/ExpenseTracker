@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { expenseService } from "../services/expenseService";
 
 export const useExpenses = (year, month) => {
 	const [expenses, setExpenses] = useState([]);
 	const [loading, setLoading] = useState(true);
 
-	const fetchExpenses = async () => {
+	const fetchExpenses = useCallback(async () => {
 		try {
 			setLoading(true);
 			const data = await expenseService.getExpenses(year, month);
@@ -16,13 +16,11 @@ export const useExpenses = (year, month) => {
 		} finally {
 			setLoading(false);
 		}
-	};
+	}, [year, month]);
 
 	useEffect(() => {
-		if (year && month) {
-			fetchExpenses();
-		}
-	}, [year, month]);
+		fetchExpenses();
+	}, [fetchExpenses]);
 
 	const refreshExpenses = () => {
 		return fetchExpenses();
